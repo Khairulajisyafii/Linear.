@@ -1,0 +1,51 @@
+SYSTEM PROMPT & DESIGN SYSTEM UNTUK "LINEAR - CAREER & EDUCATION TRACKER"
+
+Instruksi untuk AI: Gunakan dokumen ini sebagai "Buku Panduan Utama" (Single Source of Truth) setiap kali diminta membuat, mendesain ulang, atau menambahkan halaman baru pada proyek ini (seperti Dashboard, Pencarian Roadmap, Halaman Profil, Resource Pocket, dll). Terapkan standar berikut secara konsisten di SELURUH HALAMAN web.
+
+---
+1. IDENTITAS VISUAL & TEMA (GLOBAL)
+- Gaya: Premium SaaS, Profesional, Clean, Modern (Terinspirasi Linear.app / Vercel).
+- Konfigurasi Warna Tailwind Wajib:
+  colors: {
+      brand: {
+          green: '#A9C52F',   // Aksen utama (Tombol Aksi, Status Aktif, Glow)
+          light: '#F5F7F8',   // Latar belakang utama (Dashboard, Kertas Kerja)
+          black: '#000000',   // Latar area gelap, Teks utama di area terang
+          darkgray: '#0a0a0a',// Area sidebar/panel di mode gelap
+          border: '#222222'   // Border elemen
+      }
+  }
+- Tipografi: Wajib menggunakan font 'Inter'. Heading harus tebal (bold/extrabold) dengan jarak rapat (`tracking-tight`). Teks deskripsi menggunakan warna abu-abu (`text-gray-500`) dengan `leading-relaxed`.
+
+---
+2. ATURAN LAYOUT HALAMAN (PAGE STRUCTURES)
+Berdasarkan jenis halaman yang dibuat, ikuti struktur berikut:
+
+A. HALAMAN DASHBOARD / APLIKASI UTAMA
+- Struktur: Gunakan layout 2-kolom (Sidebar Kiri + Konten Kanan).
+- Sidebar: Latar belakang bersih (`bg-brand-light` atau `bg-white`), tautan navigasi menggunakan efek hover halus (`hover:bg-gray-100 rounded-lg`). Indikator menu aktif menggunakan warna teks/ikon `text-brand-green`.
+- Header/Topbar: Minimalis, menyatu dengan background, hanya berisi Breadcrumbs, Search Bar global, dan Profil User.
+
+B. HALAMAN PENCARIAN & FILTER (ROADMAP / BEASISWA)
+- Search Bar: Elegan, lebar, dengan ikon kaca pembesar (Lucide/Heroicons). Gunakan `focus:ring-2 focus:ring-brand-green`.
+- Filter/Tags: Gunakan desain 'Pill' (kapsul). Kategori seperti "program pemerintah", "gratis", atau "kompetitif" dibuat membulat (`rounded-full px-3 py-1 text-sm bg-white border border-gray-200 hover:border-brand-green`).
+- Hasil Pencarian: Tampilkan dalam bentuk Grid (Grid-cols-1 md:grid-cols-2 lg:grid-cols-3) menggunakan Card yang bersih.
+
+C. HALAMAN INTERACTIVE ROADMAP / STEPPER
+- Desain Jalur (Path): Gunakan garis vertikal (`border-l-2`) atau horizontal yang menghubungkan titik-titik (dots). 
+- Checkpoints: Titik yang sudah dilewati (Completed) diberi warna `bg-brand-green`. Titik yang belum (Locked) diberi warna abu-abu.
+- Card Milestone: Tiap tahapan (misal: "Riset Persyaratan") dibungkus dalam Card dengan efek hover mengangkat (scale).
+
+---
+3. STANDAR KOMPONEN UI UMUM (Dapat dipakai di mana saja)
+- Tombol Utama (Primary): `bg-brand-black text-brand-light rounded-xl font-semibold transition-all hover:-translate-y-0.5 hover:shadow-lg`
+- Tombol Sekunder (Secondary): `bg-white border border-gray-200 text-brand-black rounded-xl font-medium transition-all hover:border-brand-green hover:bg-brand-green/5`
+- Card/Wadah Konten: Di tema terang, gunakan `bg-white rounded-2xl shadow-sm border border-gray-100`. Di tema gelap, gunakan Glassmorphism (`bg-white/5 backdrop-blur-md border border-white/5`).
+- Alert/Notifikasi: Jika sukses, gunakan outline/aksen `brand-green`. Hindari warna neon yang mencolok (tetap flat dan elegan).
+- Scrollbar: Jangan gunakan scrollbar bawaan yang tebal. Terapkan kelas kustom (misal `hide-scrollbar`) atau scrollbar ramping yang tidak mengganggu UI.
+
+---
+4. KUALITAS & INTERAKSI (UX)
+- Jangan pernah membuat UI yang kaku. Selalu tambahkan `transition-all duration-300` pada elemen yang dapat di-klik.
+- Elemen kosong (Empty States) di Dashboard atau Pocket Resource harus diisi dengan ilustrasi abstrak/ikon rapi dan pesan ajakan yang ramah.
+- Animasi Entry: Saat memuat list roadmap, dashboard stats, atau card pencarian, gunakan animasi beruntun (`staggered fade-in` atau `slide-up`).

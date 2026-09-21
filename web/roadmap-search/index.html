@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linear - Cari Roadmap & Beasiswa</title>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            green: '#A9C52F',
+                            light: '#F5F7F8',
+                            black: '#000000',
+                            darkgray: '#0a0a0a',
+                            border: '#222222'
+                        }
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.5s ease-out forwards',
+                        'slide-up': 'slideUp 0.6s ease-out forwards',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { opacity: '0', transform: 'translateY(15px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-brand-light font-sans text-brand-black antialiased flex h-screen overflow-hidden">
+
+    <!-- Sidebar Kiri -->
+    <aside class="w-64 bg-white border-r border-gray-200 hidden md:flex flex-col h-full z-10 flex-shrink-0">
+        <!-- Logo -->
+        <div class="h-20 flex items-center px-8 border-b border-gray-100">
+            <div class="flex items-center gap-2">
+                <div class="w-7 h-7 rounded-md bg-brand-green flex items-center justify-center rotate-3">
+                    <div class="w-2.5 h-2.5 bg-brand-black rounded-sm -rotate-3"></div>
+                </div>
+                <h1 class="text-xl font-bold tracking-tight text-brand-black">Linear</h1>
+            </div>
+        </div>
+
+        <!-- Menu Navigasi -->
+        <nav class="flex-1 px-4 py-6 space-y-2 overflow-y-auto hide-scrollbar">
+            <a href="#" class="flex items-center gap-3 px-4 py-3 text-sm font-medium text-gray-500 rounded-xl hover:bg-gray-50 hover:text-brand-black transition-colors">
+                <svg class="w-5 h-5 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+                Dashboard
+            </a>
+            <a href="#" class="flex items-center gap-3 px-4 py-3 text-sm font-semibold text-brand-green bg-brand-green/10 rounded-xl transition-colors">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                Cari Roadmap
+            </a>
+            <a href="#" class="flex items-center gap-3 px-4 py-3 text-sm font-medium text-gray-500 rounded-xl hover:bg-gray-50 hover:text-brand-black transition-colors">
+                <svg class="w-5 h-5 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"></path></svg>
+                Resource Pocket
+            </a>
+            <a href="#" class="flex items-center gap-3 px-4 py-3 text-sm font-medium text-gray-500 rounded-xl hover:bg-gray-50 hover:text-brand-black transition-colors">
+                <svg class="w-5 h-5 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                Alumni Insight
+            </a>
+        </nav>
+
+        <!-- Profil Bawah -->
+        <div class="p-4 border-t border-gray-100">
+            <div class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-gray-50 cursor-pointer transition-colors">
+                <img src="avatar_zorin.svg" alt="Zorin" class="w-9 h-9 rounded-full object-cover shadow-sm">
+                <div class="flex-1 min-w-0">
+                    <p class="text-sm font-semibold text-brand-black truncate">Zorin</p>
+                    <p class="text-xs text-gray-500 truncate">Pelajar</p>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Konten Utama Kanan -->
+    <main class="flex-1 flex flex-col h-full overflow-hidden relative">
+        
+        <!-- Topbar Mobile -->
+        <header class="md:hidden h-16 bg-white border-b border-gray-200 flex items-center justify-between px-4 flex-shrink-0">
+            <div class="flex items-center gap-2">
+                <div class="w-6 h-6 rounded bg-brand-green flex items-center justify-center rotate-3"></div>
+                <h1 class="text-lg font-bold tracking-tight text-brand-black">Linear</h1>
+            </div>
+            <button class="p-2 text-gray-500 rounded-lg hover:bg-gray-100">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </header>
+
+        <!-- Area Konten Scrollable -->
+        <div class="flex-1 overflow-y-auto hide-scrollbar p-6 md:p-10 lg:p-12 scroll-smooth">
+            
+            <div class="max-w-6xl mx-auto opacity-0 animate-fade-in">
+                
+                <!-- Header Halaman -->
+                <div class="mb-10">
+                    <div class="flex items-center gap-2 text-sm text-gray-500 mb-3">
+                        <span>Dashboard</span>
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                        <span class="font-medium text-brand-black">Pencarian Roadmap</span>
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-brand-black mb-2">Eksplorasi Jalur Karir & Pendidikan</h2>
+                    <p class="text-gray-500 leading-relaxed max-w-2xl">Temukan program beasiswa, jalur developer, hingga lowongan yang paling cocok dengan skill Anda. Analisis gap, dan mulai perjalanan Anda.</p>
+                </div>
+
+                <!-- Search Bar Besar -->
+                <div class="relative w-full mb-8 shadow-sm group">
+                    <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-gray-400 group-focus-within:text-brand-green transition-colors">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                    </div>
+                    <input type="text" class="w-full pl-12 pr-4 py-4 md:py-5 bg-white border border-gray-200 rounded-2xl text-brand-black font-medium focus:outline-none focus:ring-2 focus:ring-brand-green focus:border-transparent transition-all placeholder-gray-400 text-lg" placeholder="Cari beasiswa, universitas, corporate bootcamp...">
+                    <button class="absolute inset-y-2 right-2 px-6 bg-brand-black text-brand-light font-semibold rounded-xl hover:-translate-y-0.5 hover:shadow-md transition-all">
+                        Cari
+                    </button>
+                </div>
+
+                <!-- Filter Tags (Pills) -->
+                <div class="flex items-center gap-3 overflow-x-auto hide-scrollbar pb-4 mb-8">
+                    <button class="whitespace-nowrap px-5 py-2 rounded-full text-sm font-semibold bg-brand-black text-brand-light shadow-sm transition-transform hover:scale-105">Semua Kategori</button>
+                    <button class="whitespace-nowrap px-5 py-2 rounded-full text-sm font-medium bg-white border border-gray-200 text-gray-600 hover:border-brand-green hover:text-brand-black transition-all">Program Pemerintah</button>
+                    <button class="whitespace-nowrap px-5 py-2 rounded-full text-sm font-medium bg-white border border-gray-200 text-gray-600 hover:border-brand-green hover:text-brand-black transition-all">Fully Funded</button>
+                    <button class="whitespace-nowrap px-5 py-2 rounded-full text-sm font-medium bg-white border border-gray-200 text-gray-600 hover:border-brand-green hover:text-brand-black transition-all">Corporate</button>
+                    <button class="whitespace-nowrap px-5 py-2 rounded-full text-sm font-medium bg-white border border-gray-200 text-gray-600 hover:border-brand-green hover:text-brand-black transition-all">Gratis</button>
+                    <button class="whitespace-nowrap px-5 py-2 rounded-full text-sm font-medium bg-white border border-gray-200 text-gray-600 hover:border-brand-green hover:text-brand-black transition-all">Kompetitif</button>
+                    <button class="whitespace-nowrap px-5 py-2 rounded-full text-sm font-medium bg-white border border-gray-200 text-gray-600 hover:border-brand-green hover:text-brand-black transition-all">Lanjut Kerja</button>
+                </div>
+
+                <!-- Hasil Pencarian (Grid Cards) -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pb-20">
+                    
+                    <!-- Card 1 -->
+                    <div class="bg-white rounded-3xl p-6 border border-gray-100 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-300 opacity-0 animate-slide-up" style="animation-delay: 0.1s;">
+                        <div class="flex justify-between items-start mb-4">
+                            <img src="logo_apple.svg" alt="Apple" class="w-12 h-12 rounded-2xl object-cover shadow-sm border border-gray-100">
+                            <!-- Rating -->
+                            <div class="flex items-center gap-1 bg-brand-green/10 text-brand-green px-2.5 py-1 rounded-lg text-xs font-bold">
+                                <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                                5.0
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold text-brand-black mb-1">Apple Developer Academy</h3>
+                        <p class="text-sm text-gray-500 mb-4 line-clamp-2">Program intensif 10 bulan untuk melatih skill iOS Development, Desain, dan Bisnis secara profesional.</p>
+                        
+                        <!-- Benefit Tags -->
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-2.5 py-1 bg-gray-50 border border-gray-100 rounded-md text-xs font-medium text-gray-600">Fully Funded</span>
+                            <span class="px-2.5 py-1 bg-gray-50 border border-gray-100 rounded-md text-xs font-medium text-gray-600">Pemberian Fasilitas (MacBook)</span>
+                            <span class="px-2.5 py-1 bg-gray-50 border border-gray-100 rounded-md text-xs font-medium text-gray-600">Kompetitif</span>
+                        </div>
+                        
+                        <div class="flex items-center gap-3 mt-auto">
+                            <button class="flex-1 bg-brand-black text-brand-light py-2.5 rounded-xl text-sm font-semibold hover:-translate-y-0.5 hover:shadow-lg transition-all">
+                                Lihat Roadmap
+                            </button>
+                            <button class="w-10 h-10 flex items-center justify-center border border-gray-200 rounded-xl text-gray-400 hover:text-brand-green hover:border-brand-green transition-colors" title="Simpan ke Pocket">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"></path></svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="bg-white rounded-3xl p-6 border border-gray-100 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-300 opacity-0 animate-slide-up" style="animation-delay: 0.2s;">
+                        <div class="flex justify-between items-start mb-4">
+                            <img src="logo_lpdp.svg" alt="LPDP" class="w-12 h-12 rounded-2xl object-cover shadow-sm border border-gray-100">
+                            <!-- Rating -->
+                            <div class="flex items-center gap-1 bg-brand-green/10 text-brand-green px-2.5 py-1 rounded-lg text-xs font-bold">
+                                <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                                4.9
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold text-brand-black mb-1">Beasiswa LPDP 2026</h3>
+                        <p class="text-sm text-gray-500 mb-4 line-clamp-2">Beasiswa pascasarjana (S2/S3) dari Pemerintah Indonesia untuk studi di dalam dan luar negeri.</p>
+                        
+                        <!-- Benefit Tags -->
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-2.5 py-1 bg-gray-50 border border-gray-100 rounded-md text-xs font-medium text-gray-600">Program Pemerintah</span>
+                            <span class="px-2.5 py-1 bg-gray-50 border border-gray-100 rounded-md text-xs font-medium text-gray-600">Fully Funded</span>
+                            <span class="px-2.5 py-1 bg-gray-50 border border-gray-100 rounded-md text-xs font-medium text-gray-600">Living Allowance</span>
+                        </div>
+                        
+                        <div class="flex items-center gap-3 mt-auto">
+                            <button class="flex-1 bg-brand-black text-brand-light py-2.5 rounded-xl text-sm font-semibold hover:-translate-y-0.5 hover:shadow-lg transition-all">
+                                Lihat Roadmap
+                            </button>
+                            <button class="w-10 h-10 flex items-center justify-center border border-gray-200 rounded-xl text-gray-400 hover:text-brand-green hover:border-brand-green transition-colors" title="Simpan ke Pocket">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"></path></svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="bg-white rounded-3xl p-6 border border-gray-100 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-300 opacity-0 animate-slide-up" style="animation-delay: 0.3s;">
+                        <div class="flex justify-between items-start mb-4">
+                            <img src="logo_bangkit.svg" alt="Bangkit" class="w-12 h-12 rounded-2xl object-cover shadow-sm border border-gray-100">
+                            <!-- Rating -->
+                            <div class="flex items-center gap-1 bg-brand-green/10 text-brand-green px-2.5 py-1 rounded-lg text-xs font-bold">
+                                <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                                4.7
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold text-brand-black mb-1">Bangkit Academy</h3>
+                        <p class="text-sm text-gray-500 mb-4 line-clamp-2">Program persiapan karir IT spesifik (Cloud, ML, Android) oleh Google, GoTo, dan Traveloka.</p>
+                        
+                        <!-- Benefit Tags -->
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-2.5 py-1 bg-gray-50 border border-gray-100 rounded-md text-xs font-medium text-gray-600">Corporate</span>
+                            <span class="px-2.5 py-1 bg-gray-50 border border-gray-100 rounded-md text-xs font-medium text-gray-600">Gratis</span>
+                            <span class="px-2.5 py-1 bg-gray-50 border border-gray-100 rounded-md text-xs font-medium text-gray-600">Lanjut Kerja (Top Grads)</span>
+                        </div>
+                        
+                        <div class="flex items-center gap-3 mt-auto">
+                            <button class="flex-1 bg-brand-black text-brand-light py-2.5 rounded-xl text-sm font-semibold hover:-translate-y-0.5 hover:shadow-lg transition-all">
+                                Lihat Roadmap
+                            </button>
+                            <button class="w-10 h-10 flex items-center justify-center border border-gray-200 rounded-xl text-gray-400 hover:text-brand-green hover:border-brand-green transition-colors" title="Simpan ke Pocket">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"></path></svg>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>

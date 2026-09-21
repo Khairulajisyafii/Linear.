@@ -1,165 +1,208 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dashboard - Career & Education Tracker</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <nav class="navbar">
-        <div class="logo">Path<span>Tracker</span></div>
-        <ul class="nav-links">
-            <li><a href="#" class="active">Dashboard</a></li>
-            <li><a href="#">Search Your Path</a></li>
-            <li><a href="#">Resource Pocket</a></li>
-            <li><a href="#">Alumni Insight</a></li>
-        </ul>
-        <div class="user-profile">
-            <span class="avatar">U</span>
-            <span>Hi, User</span>
-        </div>
+      <div class="logo">Path<span>Tracker</span></div>
+      <ul class="nav-links">
+        <li><a href="#" class="active">Dashboard</a></li>
+        <li><a href="#">Search Your Path</a></li>
+        <li><a href="#">Resource Pocket</a></li>
+        <li><a href="#">Alumni Insight</a></li>
+      </ul>
+      <div class="user-profile">
+        <span class="avatar">U</span>
+        <span>Hi, User</span>
+      </div>
     </nav>
 
     <div class="dashboard-container">
-        <!-- Sidebar -->
-        <aside class="sidebar">
-            <ul>
-                <li class="active">Overview</li>
-                <li>My Roadmaps</li>
-                <li>Skills Gap Analyzer</li>
-                <li>Saved Paths</li>
-                <li>Settings</li>
-            </ul>
-        </aside>
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <ul>
+          <li class="active">Overview</li>
+          <li>My Roadmaps</li>
+          <li>Skills Gap Analyzer</li>
+          <li>Saved Paths</li>
+          <li>Settings</li>
+        </ul>
+      </aside>
 
-        <!-- Main Content -->
-        <main class="main-content">
-            <header class="dashboard-header">
-                <h1>Selamat Datang, User! 👋</h1>
-                <p>Mulai eksplorasi perjalanan karir dan pendidikan Anda hari ini.</p>
-            </header>
+      <!-- Main Content -->
+      <main class="main-content">
+        <header class="dashboard-header">
+          <h1>Selamat Datang, User!</h1>
+          <p>Mulai eksplorasi perjalanan karir dan pendidikan Anda hari ini.</p>
+        </header>
 
-            <!-- Empty Roadmap Feature -->
-            <section class="active-roadmap">
-                <h2>Roadmap Aktif</h2>
-                <div class="empty-state">
-                    <div class="empty-icon">🧭</div>
-                    <h3>Belum ada roadmap yang diikuti</h3>
-                    <p>Temukan dan pilih roadmap pertama Anda untuk mulai melacak progres belajar dan karir Anda.</p>
-                    <button class="btn-primary" style="width: auto; margin-top: 1.5rem; padding: 0.75rem 1.5rem;">Cari Roadmap</button>
-                </div>
+        <!-- Empty Roadmap Feature -->
+        <section class="active-roadmap">
+          <h2>Roadmap Aktif</h2>
+          <div class="empty-state">
+            <div class="empty-icon">🧭</div>
+            <h3>Belum ada roadmap yang diikuti</h3>
+            <p>
+              Temukan dan pilih roadmap pertama Anda untuk mulai melacak progres
+              belajar dan karir Anda.
+            </p>
+            <button
+              class="btn-primary"
+              style="width: auto; margin-top: 1.5rem; padding: 0.75rem 1.5rem"
+            >
+              Cari Roadmap
+            </button>
+          </div>
+        </section>
+
+        <div class="grid-container">
+          <!-- Kolom Kiri -->
+          <div class="grid-column">
+            <!-- Empty Deadline Tracker Feature -->
+            <section class="deadline-tracker">
+              <h2>Deadline Mendatang</h2>
+              <div class="empty-state small-empty">
+                <div class="empty-icon">📅</div>
+                <p>Tidak ada jadwal terdekat. Anda sedang bersantai!</p>
+              </div>
             </section>
 
-            <div class="grid-container">
-                <!-- Kolom Kiri -->
-                <div class="grid-column">
-                    <!-- Empty Deadline Tracker Feature -->
-                    <section class="deadline-tracker">
-                        <h2>Deadline Mendatang</h2>
-                        <div class="empty-state small-empty">
-                            <div class="empty-icon">📅</div>
-                            <p>Tidak ada jadwal terdekat. Anda sedang bersantai!</p>
-                        </div>
-                    </section>
+            <!-- Personalized Roadmap Feature -->
+            <section class="personalized-roadmap">
+              <h2>Rekomendasi Untukmu 🎯</h2>
+              <p class="section-desc">
+                Berdasarkan minat Anda di bidang <strong>Teknologi</strong>
+              </p>
 
-                    <!-- Personalized Roadmap Feature -->
-                    <section class="personalized-roadmap">
-                        <h2>Rekomendasi Untukmu 🎯</h2>
-                        <p class="section-desc">Berdasarkan minat Anda di bidang <strong>Teknologi</strong></p>
-                        
-                        <div class="path-card">
-                            <div class="match-badge">95% Match</div>
-                            <h3>Apple Developer Academy</h3>
-                            <div class="rating">⭐ 5/5 (Pemberian Fasilitas)</div>
-                            <div class="tags">
-                                <span class="tag">Kompetitif</span>
-                                <span class="tag">Serius</span>
-                            </div>
-                            <button class="btn-outline preview-btn" data-title="Apple Developer Academy">Preview Roadmap</button>
-                        </div>
-                    </section>
+              <div class="path-card">
+                <div class="match-badge">95% Match</div>
+                <h3>Apple Developer Academy</h3>
+                <div class="rating">⭐ 5/5 (Pemberian Fasilitas)</div>
+                <div class="tags">
+                  <span class="tag">Kompetitif</span>
+                  <span class="tag">Serius</span>
                 </div>
+                <button
+                  class="btn-outline preview-btn"
+                  data-title="Apple Developer Academy"
+                >
+                  Preview Roadmap
+                </button>
+              </div>
+            </section>
+          </div>
 
-                <!-- Kolom Kanan -->
-                <div class="grid-column">
-                    <!-- Trending Roadmap Feature -->
-                    <section class="hot-paths">
-                        <h2>Trending Roadmap 🔥</h2>
-                        <div class="path-card">
-                            <h3>Beasiswa LPDP 2024</h3>
-                            <div class="rating">⭐ 5/5 (Fully Funded)</div>
-                            <div class="tags">
-                                <span class="tag">Program Pemerintah</span>
-                                <span class="tag">Gratis</span>
-                                <span class="tag">Kompetitif</span>
-                            </div>
-                            <button class="btn-outline preview-btn" data-title="Beasiswa LPDP 2024">Preview Roadmap</button>
-                        </div>
-                        
-                        <div class="path-card">
-                            <h3>Google Bangkit 2024</h3>
-                            <div class="rating">⭐ 4.5/5 (Lanjut Kerja)</div>
-                            <div class="tags">
-                                <span class="tag">Program Pemerintah</span>
-                                <span class="tag">Gratis</span>
-                                <span class="tag">Serius</span>
-                            </div>
-                            <button class="btn-outline preview-btn" data-title="Google Bangkit 2024">Preview Roadmap</button>
-                        </div>
-                    </section>
+          <!-- Kolom Kanan -->
+          <div class="grid-column">
+            <!-- Trending Roadmap Feature -->
+            <section class="hot-paths">
+              <h2>Trending Roadmap 🔥</h2>
+              <div class="path-card">
+                <h3>Beasiswa LPDP 2024</h3>
+                <div class="rating">⭐ 5/5 (Fully Funded)</div>
+                <div class="tags">
+                  <span class="tag">Program Pemerintah</span>
+                  <span class="tag">Gratis</span>
+                  <span class="tag">Kompetitif</span>
                 </div>
-            </div>
-        </main>
+                <button
+                  class="btn-outline preview-btn"
+                  data-title="Beasiswa LPDP 2024"
+                >
+                  Preview Roadmap
+                </button>
+              </div>
+
+              <div class="path-card">
+                <h3>Google Bangkit 2024</h3>
+                <div class="rating">⭐ 4.5/5 (Lanjut Kerja)</div>
+                <div class="tags">
+                  <span class="tag">Program Pemerintah</span>
+                  <span class="tag">Gratis</span>
+                  <span class="tag">Serius</span>
+                </div>
+                <button
+                  class="btn-outline preview-btn"
+                  data-title="Google Bangkit 2024"
+                >
+                  Preview Roadmap
+                </button>
+              </div>
+            </section>
+          </div>
+        </div>
+      </main>
     </div>
-    
+
     <!-- Modal Preview Roadmap -->
     <div class="modal-overlay" id="previewModal">
-        <div class="modal-content">
-            <button class="close-btn" id="closeModal">&times;</button>
-            <div class="modal-header">
-                <h2 id="modalTitle">Roadmap Title</h2>
-                <p class="modal-desc">Pratinjau tahapan yang akan Anda lalui dalam roadmap ini.</p>
-            </div>
-            
-            <div class="timeline">
-                <div class="timeline-step">
-                    <div class="dot"></div>
-                    <div class="step-info">
-                        <h4>Tahap 1: Riset & Persyaratan</h4>
-                        <p>Memahami kualifikasi, dokumen yang dibutuhkan, dan jadwal pendaftaran secara menyeluruh.</p>
-                    </div>
-                </div>
-                <div class="timeline-step">
-                    <div class="dot"></div>
-                    <div class="step-info">
-                        <h4>Tahap 2: Persiapan Berkas</h4>
-                        <p>Panduan menyusun CV ATS-friendly, esai/motivation letter, dan portofolio.</p>
-                    </div>
-                </div>
-                <div class="timeline-step">
-                    <div class="dot"></div>
-                    <div class="step-info">
-                        <h4>Tahap 3: Seleksi Tes Tertulis/Online</h4>
-                        <p>Simulasi soal logika, tes kepribadian, atau tes dasar sesuai program.</p>
-                    </div>
-                </div>
-                <div class="timeline-step">
-                    <div class="dot"></div>
-                    <div class="step-info">
-                        <h4>Tahap 4: Interview & Evaluasi</h4>
-                        <p>Tips wawancara dan persiapan menghadapi tim seleksi/panelis.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="modal-actions">
-                <button class="btn-primary" id="startRoadmapBtn">Mulai Roadmap Ini</button>
-            </div>
+      <div class="modal-content">
+        <button class="close-btn" id="closeModal">&times;</button>
+        <div class="modal-header">
+          <h2 id="modalTitle">Roadmap Title</h2>
+          <p class="modal-desc">
+            Pratinjau tahapan yang akan Anda lalui dalam roadmap ini.
+          </p>
         </div>
+
+        <div class="timeline">
+          <div class="timeline-step">
+            <div class="dot"></div>
+            <div class="step-info">
+              <h4>Tahap 1: Riset & Persyaratan</h4>
+              <p>
+                Memahami kualifikasi, dokumen yang dibutuhkan, dan jadwal
+                pendaftaran secara menyeluruh.
+              </p>
+            </div>
+          </div>
+          <div class="timeline-step">
+            <div class="dot"></div>
+            <div class="step-info">
+              <h4>Tahap 2: Persiapan Berkas</h4>
+              <p>
+                Panduan menyusun CV ATS-friendly, esai/motivation letter, dan
+                portofolio.
+              </p>
+            </div>
+          </div>
+          <div class="timeline-step">
+            <div class="dot"></div>
+            <div class="step-info">
+              <h4>Tahap 3: Seleksi Tes Tertulis/Online</h4>
+              <p>
+                Simulasi soal logika, tes kepribadian, atau tes dasar sesuai
+                program.
+              </p>
+            </div>
+          </div>
+          <div class="timeline-step">
+            <div class="dot"></div>
+            <div class="step-info">
+              <h4>Tahap 4: Interview & Evaluasi</h4>
+              <p>
+                Tips wawancara dan persiapan menghadapi tim seleksi/panelis.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-actions">
+          <button class="btn-primary" id="startRoadmapBtn">
+            Mulai Roadmap Ini
+          </button>
+        </div>
+      </div>
     </div>
 
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
