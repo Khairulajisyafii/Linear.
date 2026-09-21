@@ -1,0 +1,438 @@
+:root {
+    /* Color Palette from colorpalet.txt */
+    --white: #F5F7F8;
+    --green: #A9C52F;
+    --black: #000000;
+    
+    /* Additional UI colors for a cleaner look */
+    --gray: #E8ECEF; 
+    --gray-dark: #D1D5D8;
+    --card-bg: #FFFFFF;
+    --text-light: #6C757D;
+    --text-dark: #212529;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: var(--white);
+    color: var(--black);
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--card-bg);
+    border-bottom: 1px solid var(--gray);
+    color: var(--text-dark);
+    padding: 1rem 2.5rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar .logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--black);
+    letter-spacing: -0.5px;
+}
+
+.navbar .logo span {
+    color: var(--green);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2.5rem;
+}
+
+.nav-links a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: var(--black);
+    font-weight: 600;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
+    color: var(--text-dark);
+}
+
+.avatar {
+    width: 38px;
+    height: 38px;
+    background-color: var(--green);
+    color: var(--black);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+}
+
+/* Dashboard Layout */
+.dashboard-container {
+    display: flex;
+    min-height: calc(100vh - 74px);
+}
+
+/* Sidebar */
+.sidebar {
+    width: 260px;
+    background-color: transparent;
+    padding: 2.5rem 1.5rem;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar li {
+    padding: 0.85rem 1rem;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+    border-radius: 8px;
+    font-weight: 500;
+    color: var(--text-light);
+    transition: all 0.2s ease;
+}
+
+.sidebar li:hover {
+    background-color: var(--gray);
+    color: var(--text-dark);
+}
+
+.sidebar li.active {
+    background-color: var(--white);
+    color: var(--black);
+    font-weight: 600;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+    border: 1px solid var(--gray);
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    padding: 2.5rem 3.5rem;
+    overflow-y: auto;
+}
+
+.dashboard-header {
+    margin-bottom: 2.5rem;
+}
+
+.dashboard-header h1 {
+    font-size: 1.85rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.5px;
+}
+
+.dashboard-header p {
+    color: var(--text-light);
+    font-size: 1.05rem;
+}
+
+/* Grid Container */
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+.grid-column {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* Generic Sections */
+.active-roadmap, .deadline-tracker, .hot-paths, .personalized-roadmap {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 16px;
+    border: 1px solid var(--gray);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.015);
+}
+
+.active-roadmap { margin-bottom: 2rem; }
+
+h2 {
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.section-desc {
+    color: var(--text-light);
+    margin-top: -1rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+}
+
+/* Personalized Match Badge */
+.match-badge {
+    display: inline-block;
+    background-color: var(--black);
+    color: var(--green);
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.25rem 0.6rem;
+    border-radius: 6px;
+    margin-bottom: 0.75rem;
+}
+
+/* Empty States */
+.empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 3rem 1.5rem;
+    background-color: var(--white);
+    border: 1.5px dashed var(--gray-dark);
+    border-radius: 12px;
+}
+
+.small-empty {
+    padding: 2.5rem 1rem;
+}
+
+.empty-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    opacity: 0.9;
+}
+
+.empty-state h3 {
+    margin-bottom: 0.5rem;
+    color: var(--text-dark);
+    font-size: 1.1rem;
+}
+
+.empty-state p {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    max-width: 400px;
+    line-height: 1.5;
+}
+
+/* Cards */
+.path-card {
+    padding: 1.5rem;
+    border: 1px solid var(--gray);
+    border-radius: 12px;
+    margin-bottom: 1.25rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.path-card:last-child {
+    margin-bottom: 0;
+}
+
+.path-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.03);
+}
+
+.path-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.path-card .rating {
+    color: #F5A623;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.tag {
+    background: var(--white);
+    color: var(--text-light);
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    border: 1px solid var(--gray-dark);
+    font-weight: 500;
+}
+
+/* Buttons */
+.btn-primary {
+    background: var(--green);
+    color: var(--black);
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.2s;
+    width: 100%;
+}
+
+.btn-primary:hover {
+    opacity: 0.85;
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--text-dark);
+    border: 1px solid var(--gray-dark);
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    width: 100%;
+}
+
+.btn-outline:hover {
+    background: var(--black);
+    color: var(--white);
+    border-color: var(--black);
+}
+
+/* --- Modal Styles --- */
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    backdrop-filter: blur(3px);
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-content {
+    background: var(--card-bg);
+    width: 90%;
+    max-width: 550px;
+    border-radius: 16px;
+    padding: 2.5rem;
+    position: relative;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+}
+
+.modal-overlay.active .modal-content {
+    transform: translateY(0);
+}
+
+.close-btn {
+    position: absolute;
+    top: 1.5rem; right: 1.5rem;
+    background: none; border: none;
+    font-size: 1.5rem; cursor: pointer;
+    color: var(--text-light);
+    width: 32px; height: 32px;
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 50%;
+    transition: background 0.2s;
+}
+
+.close-btn:hover {
+    background: var(--gray);
+    color: var(--text-dark);
+}
+
+.modal-header h2 {
+    margin-bottom: 0.5rem;
+    padding-right: 2rem;
+}
+
+.modal-desc {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+}
+
+/* Timeline in Modal */
+.timeline {
+    position: relative;
+    padding-left: 10px;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 16.5px; top: 0;
+    height: 100%; width: 2px;
+    background: var(--gray);
+}
+
+.timeline-step {
+    display: flex;
+    gap: 1.25rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.timeline-step:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-step .dot {
+    width: 16px; height: 16px;
+    background: var(--white);
+    border: 3px solid var(--green);
+    border-radius: 50%;
+    position: relative;
+    z-index: 2;
+    flex-shrink: 0;
+    margin-top: 4px;
+}
+
+.step-info h4 {
+    font-size: 1.05rem;
+    margin-bottom: 0.3rem;
+    color: var(--text-dark);
+}
+
+.step-info p {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    line-height: 1.5;
+}
+
+.modal-actions {
+    margin-top: 2.5rem;
+    text-align: center;
+}
