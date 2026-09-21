@@ -1,0 +1,25 @@
+name: Linear
+
+on:
+  push:
+    branches: ["main", "master"]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # (1) Your tests and build steps go here...
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      # (2) Notify Waveflow
+      - name: Update CI Status to Waveflow
+        if: always()
+        run: |
+          curl -X POST https://waveflow-sepia.vercel.app/api/ci/webhook \
+            -H "Content-Type: application/json" \
+            -d '{
+              "secret": "577699ee-d1fd-42ac-b6d9-8580af61c08e",
+              "githubRepo": "${{ github.repository }}",
+              "ciStatus": "${{ job.status }}"
+            }'

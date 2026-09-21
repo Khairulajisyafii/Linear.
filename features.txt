@@ -1,0 +1,41 @@
+
+-Interactive Roadmap/Stepper
+sistem checkpoint,sesuai tahapan
+misal apple academy developer : 
+Riset Persyaratan => Panduan CV/Portofolio => Latihan soal => Latihan Interview
+
+-Deadline Tracker & Countdown
+Pengingat Deadline via Email/Kalender
+
+-Skills Gap analyzer 
+pembanding skill user kedalam path yang akan diambil + saran pembelajaran
++ resource pembelajaran (opsional/next features)
+
+-Resource Pocket
+penyimpanan link setiap path
+
+-alumni Insight
+Sharing dengan alumni
+
+-Rating Path
+Rating kredibilitas dan benefit path
+SISTEM RATING SKOR
+-Penilaian sertifikat (5/5) = 5*1.5
+-Benefit value : "fully funded","pemberian fasilitas","lanjut kerja"
+
+TAGS
+"program pemerintah","gratis","kompetitif","santai","serius"
+
+IDE LANJUTAN BESAR
+-UBAH ARAH PLATFORM MENJADI SOSIAL MEDIA UNJUK SKILL SEPERTI LINKDEDIN DAN PENCARIAN/PEREKRUTAN 
+ LOWONGAN PEKERJAAN
+
+-FITUR TEKNIKAL
+* LOGIN/REGISTER
+* INGAT SAYA(LOGIN)
+* FILTER/SEARCH
+* PENYIMPANAN PATH + LINK + ROADMAP 
+* HOT PATH/JOURNEY/blueprint/roadmap
+
+
+
