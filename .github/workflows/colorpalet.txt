@@ -1,0 +1,3 @@
+white : #F5F7F8
+green : #A9C52F
+black : #000000
