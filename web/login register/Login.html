@@ -3,108 +3,169 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <title>Login & Register</title>
-
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-    />
-
+    <title>Login & Register - Linear</title>
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="Login.css" />
   </head>
-
   <body>
-    <main class="page">
-      <div class="auth-container" id="authContainer">
-        <!-- ================= LEFT PANEL ================= -->
 
-        <section class="welcome-panel">
-          <div class="circle circle-top"></div>
-          <div class="circle circle-bottom"></div>
+    <div class="split-container" id="authContainer">
 
-          <div class="welcome-content">
-            <h1 id="welcomeTitle">Welcome Back !</h1>
+      <!-- ================= LEFT PANEL (50%) ================= -->
+      <div class="panel-left">
+        <video class="bg-video active" id="video1" src="video_toga.mp4" autoplay muted loop playsinline></video>
+        <video class="bg-video" id="video2" src="video_kerja.mp4" autoplay muted loop playsinline></video>
+        <div class="video-overlay"></div>
 
-            <p id="welcomeText">
-              To keep connected with us please login with your personal info.
-            </p>
-
-            <button class="switch-btn" id="switchBtn">SIGN IN</button>
+        <div class="left-content">
+          <div class="logo">
+            <div class="logo-icon"><div class="logo-inner"></div></div>
+            <span>Linear</span>
           </div>
-        </section>
 
-        <!-- ================= FORM PANEL ================= -->
+          <h1><span id="typingText"></span><span class="cursor">|</span></h1>
+          <p>Platform Career & Education Tracker terbaik. Temukan beasiswa, pantau deadline, dan analisis skill gap Anda.</p>
 
-        <section class="form-panel">
-          <!-- LOGIN -->
-
-          <div class="form-box login-box">
-            <h2>Welcome Back !</h2>
-
-            <div class="social-text">or use your account</div>
-
-            <div class="social-icons">
-              <button>
-                <i class="fa-brands fa-facebook-f"></i>
-              </button>
-
-              <button>
-                <i class="fa-brands fa-linkedin-in"></i>
-              </button>
-
-              <button>
-                <i class="fa-brands fa-x-twitter"></i>
-              </button>
+          <div class="left-footer">
+            <div class="stat-row">
+              <div class="stat">
+                <strong>10K+</strong>
+                <span>Pengguna Aktif</span>
+              </div>
+              <div class="stat-divider"></div>
+              <div class="stat">
+                <strong>500+</strong>
+                <span>Program & Beasiswa</span>
+              </div>
+              <div class="stat-divider"></div>
+              <div class="stat">
+                <strong>95%</strong>
+                <span>Tingkat Kepuasan</span>
+              </div>
             </div>
-
-            <p class="use-email">OR USE EMAIL FOR LOGIN</p>
-
-            <form>
-              <input type="email" placeholder="Email" />
-
-              <input type="password" placeholder="Password" />
-
-              <a href="#" class="forgot"> Forgot your password? </a>
-
-              <button class="submit-btn">SIGN IN</button>
-            </form>
           </div>
-
-          <!-- REGISTER -->
-
-          <div class="form-box register-box">
-            <h2>Create Account</h2>
-
-            <div class="social-icons">
-              <button>
-                <i class="fa-brands fa-facebook-f"></i>
-              </button>
-
-              <button>
-                <i class="fa-brands fa-linkedin-in"></i>
-              </button>
-
-              <button>
-                <i class="fa-brands fa-x-twitter"></i>
-              </button>
-            </div>
-
-            <p class="use-email">OR USE EMAIL FOR REGISTRATION</p>
-
-            <form>
-              <input type="text" placeholder="Name" />
-
-              <input type="email" placeholder="Email" />
-
-              <input type="password" placeholder="Password" />
-
-              <button class="submit-btn">SIGN UP</button>
-            </form>
-          </div>
-        </section>
+        </div>
       </div>
-    </main>
+
+      <!-- ================= RIGHT PANEL (50%) ================= -->
+      <div class="panel-right">
+
+        <!-- ================= CARD LOGIN ================= -->
+        <div class="card card-login" id="cardLogin">
+          <div class="bounce-title" id="loginBounceTitle">
+            <div class="bounce-ball"></div>
+            <span class="bounce-letter">L</span><span class="bounce-letter">o</span><span class="bounce-letter">g</span><span class="bounce-letter">i</span><span class="bounce-letter">n</span>
+          </div>
+          <p class="card-desc">Masuk ke akun Anda untuk melanjutkan perjalanan karir.</p>
+
+          <form>
+            <div class="input-group">
+              <input type="text" required placeholder=" " />
+              <label>Username</label>
+            </div>
+            <div class="input-group">
+              <input type="password" required placeholder=" " />
+              <label>Password</label>
+            </div>
+
+            <div class="form-row">
+              <label class="checkbox-wrap">
+                <input type="checkbox" />
+                <span class="check-box"></span>
+                Remember me
+              </label>
+              <a href="#" class="forgot">forgot password?</a>
+            </div>
+
+            <div class="button-group">
+              <button type="button" class="btn-primary">Login</button>
+              <button type="button" class="btn-guest">Lanjutkan sebagai Guest</button>
+            </div>
+          </form>
+
+          <div class="divider"><span>atau login dengan</span></div>
+
+          <!-- Original Brand SVGs -->
+          <div class="social-grid">
+            <button class="social-brand google">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="20px" height="20px"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.7 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>
+            </button>
+            <button class="social-brand facebook">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" width="20px" height="20px" fill="#1877F2"><path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"/></svg>
+            </button>
+            <button class="social-brand linkedin">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="20px" height="20px" fill="#0A66C2"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></svg>
+            </button>
+            <button class="social-brand instagram">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="20px" height="20px"><defs><linearGradient id="ig-grad" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" stop-color="#FCCF0A"/><stop offset="25%" stop-color="#FD5949"/><stop offset="50%" stop-color="#D6249F"/><stop offset="100%" stop-color="#285AEB"/></linearGradient></defs><path fill="url(#ig-grad)" d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+            </button>
+            <button class="social-brand twitter">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="18px" height="18px" fill="#000000"><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/></svg>
+            </button>
+          </div>
+
+          <!-- Swap Section to Register -->
+          <div class="swap-section">
+            <span>Belum punya akun?</span>
+            <button class="btn-swap" id="btnOpenRegister">Buat Akun Baru</button>
+          </div>
+        </div>
+
+        <!-- ================= CARD REGISTER ================= -->
+        <!-- Note: We add the "hidden-card" class by default so it's not visible initially -->
+        <div class="card card-register hidden-card" id="cardRegister">
+          <div class="bounce-title" id="registerBounceTitle">
+            <div class="bounce-ball"></div>
+            <span class="bounce-letter">R</span><span class="bounce-letter">e</span><span class="bounce-letter">g</span><span class="bounce-letter">i</span><span class="bounce-letter">s</span><span class="bounce-letter">t</span><span class="bounce-letter">e</span><span class="bounce-letter">r</span>
+          </div>
+          <p class="card-desc">Buat akun untuk mulai memetakan jalur karir Anda.</p>
+
+          <form>
+            <div class="input-group">
+              <input type="text" required placeholder=" " />
+              <label>Full Name</label>
+            </div>
+            <div class="input-group">
+              <input type="email" required placeholder=" " />
+              <label>Email</label>
+            </div>
+            <div class="input-group">
+              <input type="password" required placeholder=" " />
+              <label>Password</label>
+            </div>
+            <button type="button" class="btn-primary">Register</button>
+          </form>
+
+          <div class="divider"><span>atau register dengan</span></div>
+
+          <div class="social-grid">
+            <button class="social-brand google">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="20px" height="20px"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.7 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>
+            </button>
+            <button class="social-brand facebook">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" width="20px" height="20px" fill="#1877F2"><path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"/></svg>
+            </button>
+            <button class="social-brand linkedin">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="20px" height="20px" fill="#0A66C2"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></svg>
+            </button>
+            <button class="social-brand instagram">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="20px" height="20px"><defs><linearGradient id="ig-grad" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" stop-color="#FCCF0A"/><stop offset="25%" stop-color="#FD5949"/><stop offset="50%" stop-color="#D6249F"/><stop offset="100%" stop-color="#285AEB"/></linearGradient></defs><path fill="url(#ig-grad)" d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+            </button>
+            <button class="social-brand twitter">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="18px" height="18px" fill="#000000"><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/></svg>
+            </button>
+          </div>
+
+          <!-- Swap Section to Login -->
+          <div class="swap-section">
+            <span>Sudah punya akun?</span>
+            <button class="btn-swap" id="btnBackToLogin">Ke Login</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
 
     <script src="Login.js"></script>
   </body>
