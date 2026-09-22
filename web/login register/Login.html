@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Login & Register</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="Login.css" />
+  </head>
+
+  <body>
+    <main class="page">
+      <div class="auth-container" id="authContainer">
+        <!-- ================= LEFT PANEL ================= -->
+
+        <section class="welcome-panel">
+          <div class="circle circle-top"></div>
+          <div class="circle circle-bottom"></div>
+
+          <div class="welcome-content">
+            <h1 id="welcomeTitle">Welcome Back !</h1>
+
+            <p id="welcomeText">
+              To keep connected with us please login with your personal info.
+            </p>
+
+            <button class="switch-btn" id="switchBtn">SIGN IN</button>
+          </div>
+        </section>
+
+        <!-- ================= FORM PANEL ================= -->
+
+        <section class="form-panel">
+          <!-- LOGIN -->
+
+          <div class="form-box login-box">
+            <h2>Welcome Back !</h2>
+
+            <div class="social-text">or use your account</div>
+
+            <div class="social-icons">
+              <button>
+                <i class="fa-brands fa-facebook-f"></i>
+              </button>
+
+              <button>
+                <i class="fa-brands fa-linkedin-in"></i>
+              </button>
+
+              <button>
+                <i class="fa-brands fa-x-twitter"></i>
+              </button>
+            </div>
+
+            <p class="use-email">OR USE EMAIL FOR LOGIN</p>
+
+            <form>
+              <input type="email" placeholder="Email" />
+
+              <input type="password" placeholder="Password" />
+
+              <a href="#" class="forgot"> Forgot your password? </a>
+
+              <button class="submit-btn">SIGN IN</button>
+            </form>
+          </div>
+
+          <!-- REGISTER -->
+
+          <div class="form-box register-box">
+            <h2>Create Account</h2>
+
+            <div class="social-icons">
+              <button>
+                <i class="fa-brands fa-facebook-f"></i>
+              </button>
+
+              <button>
+                <i class="fa-brands fa-linkedin-in"></i>
+              </button>
+
+              <button>
+                <i class="fa-brands fa-x-twitter"></i>
+              </button>
+            </div>
+
+            <p class="use-email">OR USE EMAIL FOR REGISTRATION</p>
+
+            <form>
+              <input type="text" placeholder="Name" />
+
+              <input type="email" placeholder="Email" />
+
+              <input type="password" placeholder="Password" />
+
+              <button class="submit-btn">SIGN UP</button>
+            </form>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <script src="Login.js"></script>
+  </body>
+</html>

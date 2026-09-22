@@ -1,0 +1,518 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg: #f3e1ab;
+    --card: #A9C52F;
+    --white: #A9C52F;
+    --dark: #17243a;
+    --text: #000000;
+    --muted: #77766f;
+    --line: #000000;
+    --shadow: rgba(35, 38, 45, 0.28);
+}
+
+
+/* ================= BODY ================= */
+
+body {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    background:
+        radial-gradient(
+            circle at 50% 50%,
+            #f8f7ef 0%,
+            #eeeee6 70%
+        );
+
+    color: var(--text);
+}
+
+
+/* ================= MAIN ================= */
+
+.page {
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+}
+
+
+/* ================= AUTH CARD ================= */
+
+.auth-container {
+    position: relative;
+
+    width: 820px;
+    height: 500px;
+
+    display: flex;
+
+    overflow: hidden;
+
+    border-radius: 8px;
+
+    background: var(--card);
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.08),
+        0 5px 15px rgba(0, 0, 0, 0.05);
+
+    transition: 0.8s ease;
+}
+
+
+/* ================= PANELS ================= */
+
+.welcome-panel {
+    position: relative;
+
+    width: 50%;
+    height: 100%;
+
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #f2f1e8;
+
+    border-right: 1px solid #deded5;
+
+    z-index: 3;
+
+    transition: transform 0.8s cubic-bezier(.77,0,.18,1);
+}
+
+
+.form-panel {
+    position: relative;
+
+    width: 50%;
+    height: 100%;
+
+    overflow: hidden;
+
+    background: #f7f6ef;
+
+    transition: transform 0.8s cubic-bezier(.77,0,.18,1);
+}
+
+
+/* ================= WELCOME CONTENT ================= */
+
+.welcome-content {
+    width: 75%;
+
+    text-align: center;
+
+    position: relative;
+
+    z-index: 5;
+}
+
+.welcome-content h1 {
+    font-size: 30px;
+    font-weight: 600;
+
+    margin-bottom: 13px;
+}
+
+.welcome-content p {
+    max-width: 250px;
+
+    margin: 0 auto 28px;
+
+    font-size: 10px;
+    line-height: 1.6;
+
+    color: #999991;
+}
+
+
+/* ================= SWITCH BUTTON ================= */
+
+.switch-btn {
+    width: 110px;
+    height: 34px;
+
+    border-radius: 30px;
+
+    border: 1px solid #d5d5cc;
+
+    background: #f7f6ee;
+
+    color: #202020;
+
+    font-size: 9px;
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 4px 10px rgba(0, 0, 0, 0.07);
+
+    transition: 0.3s;
+}
+
+.switch-btn:hover {
+    background: var(--dark);
+    color: white;
+
+    transform: translateY(-2px);
+}
+
+
+/* ================= DECORATIVE CIRCLES ================= */
+
+.circle {
+    position: absolute;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(190, 190, 180, 0.35);
+
+    pointer-events: none;
+}
+
+.circle-top {
+    width: 190px;
+    height: 190px;
+
+    top: -115px;
+    right: -80px;
+}
+
+.circle-bottom {
+    width: 220px;
+    height: 220px;
+
+    bottom: -145px;
+    left: -90px;
+}
+
+.circle-top::after,
+.circle-bottom::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 15px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(190, 190, 180, 0.25);
+}
+
+
+/* ================= FORM BOX ================= */
+
+.form-box {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    width: 78%;
+
+    transform: translate(-50%, -50%);
+
+    text-align: center;
+
+    transition:
+        opacity 0.45s ease,
+        transform 0.7s ease;
+}
+
+.form-box h2 {
+    font-size: 18px;
+
+    font-weight: 600;
+
+    margin-bottom: 15px;
+}
+
+
+/* ================= SOCIAL ================= */
+
+.social-icons {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    margin-bottom: 12px;
+}
+
+.social-icons button {
+    width: 25px;
+    height: 25px;
+
+    border-radius: 50%;
+
+    border: 1px solid #deded6;
+
+    background: #f8f7ef;
+
+    color: #252525;
+
+    font-size: 9px;
+
+    cursor: pointer;
+
+    transition: 0.25s;
+}
+
+.social-icons button:hover {
+    background: var(--dark);
+    color: rgb(107, 159, 11);
+
+    transform: translateY(-2px);
+}
+
+
+/* ================= SMALL TEXT ================= */
+
+.use-email {
+    font-size: 7px;
+
+    color: #aaa9a0;
+
+    letter-spacing: 0.5px;
+
+    margin-bottom: 11px;
+}
+
+
+/* ================= INPUT ================= */
+
+form {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+}
+
+form input {
+    width: 100%;
+
+    height: 30px;
+
+    margin-bottom: 8px;
+
+    padding: 0 12px;
+
+    border-radius: 3px;
+
+    border: 1px solid #e1e0d8;
+
+    outline: none;
+
+    background: #f3f2eb;
+
+    color: #222;
+
+    font-size: 9px;
+
+    transition: 0.25s;
+}
+
+form input:focus {
+    border-color: #aaa9a0;
+
+    background: #faf9f2;
+}
+
+form input::placeholder {
+    color: #aaa9a0;
+}
+
+
+/* ================= FORGOT ================= */
+
+.forgot {
+    align-self: flex-end;
+
+    margin: 2px 0 15px;
+
+    color: #999890;
+
+    font-size: 8px;
+
+    text-decoration: none;
+}
+
+.forgot:hover {
+    color: var(--dark);
+}
+
+
+/* ================= SUBMIT ================= */
+
+.submit-btn {
+    width: 105px;
+    height: 32px;
+
+    border: none;
+
+    border-radius: 25px;
+
+    background: var(--dark);
+
+    color: white;
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 5px 12px rgba(23, 35, 51, 0.18);
+
+    transition: 0.3s;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 18px rgba(23, 35, 51, 0.25);
+}
+
+
+/* ================= INITIAL STATE ================= */
+
+.login-box {
+    opacity: 1;
+
+    transform:
+        translate(-50%, -50%)
+        translateX(0);
+}
+
+.register-box {
+    opacity: 0;
+
+    pointer-events: none;
+
+    transform:
+        translate(-50%, -50%)
+        translateX(100px);
+}
+
+
+/* ================= REGISTER STATE ================= */
+
+.auth-container.register-active
+.welcome-panel {
+    transform: translateX(100%);
+}
+
+.auth-container.register-active
+.form-panel {
+    transform: translateX(-100%);
+}
+
+
+.auth-container.register-active
+.login-box {
+    opacity: 0;
+
+    pointer-events: none;
+
+    transform:
+        translate(-50%, -50%)
+        translateX(-100px);
+}
+
+.auth-container.register-active
+.register-box {
+    opacity: 1;
+
+    pointer-events: auto;
+
+    transform:
+        translate(-50%, -50%)
+        translateX(0);
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 850px) {
+
+    .auth-container {
+        width: 700px;
+        height: 450px;
+    }
+}
+
+@media (max-width: 650px) {
+
+    body {
+        overflow-y: auto;
+    }
+
+    .page {
+        min-height: 100vh;
+
+        height: auto;
+
+        padding: 20px 10px;
+    }
+
+    .auth-container {
+        width: 100%;
+        max-width: 430px;
+
+        height: 600px;
+    }
+
+    .welcome-panel {
+        width: 42%;
+    }
+
+    .form-panel {
+        width: 58%;
+    }
+
+    .welcome-content h1 {
+        font-size: 17px;
+    }
+
+    .welcome-content p {
+        font-size: 8px;
+    }
+
+    .form-box {
+        width: 82%;
+    }
+
+    .form-box h2 {
+        font-size: 16px;
+    }
+
+    .switch-btn {
+        width: 90px;
+    }
+}
