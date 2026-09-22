@@ -5,10 +5,10 @@
 }
 
 :root {
-  --brand-green: #A9C52F;
+  --brand-green: #a9c52f;
   --brand-black: #000000;
-  --brand-white: #FFFFFF;
-  --brand-light: #F5F7F8;
+  --brand-white: #ffffff;
+  --brand-light: #f5f7f8;
   --text-main: #222222;
   --text-muted: #888888;
 }
@@ -17,7 +17,7 @@ body {
   width: 100%;
   height: 100vh;
   overflow: hidden;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   background: var(--brand-light);
 }
 
@@ -58,7 +58,12 @@ body {
 .video-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.6) 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.05) 10%,
+    rgba(0, 0, 0, 0.15) 10%
+  );
   z-index: 1;
 }
 
@@ -75,7 +80,8 @@ body {
   margin-bottom: 50px;
 }
 .logo-icon {
-  width: 32px; height: 32px;
+  width: 32px;
+  height: 32px;
   background: var(--brand-green);
   border-radius: 8px;
   display: flex;
@@ -84,7 +90,8 @@ body {
   transform: rotate(3deg);
 }
 .logo-inner {
-  width: 12px; height: 12px;
+  width: 12px;
+  height: 12px;
   background: var(--brand-black);
   border-radius: 3px;
   transform: rotate(-3deg);
@@ -111,12 +118,18 @@ body {
   animation: blink 0.8s steps(1) infinite;
 }
 @keyframes blink {
-  0%, 50% { opacity: 1; }
-  51%, 100% { opacity: 0; }
+  0%,
+  50% {
+    opacity: 1;
+  }
+  51%,
+  100% {
+    opacity: 0;
+  }
 }
 
 .left-content p {
-  color: rgba(255,255,255,0.65);
+  color: rgba(255, 255, 255, 0.65);
   font-size: 14px;
   line-height: 1.7;
   margin-bottom: 50px;
@@ -176,10 +189,12 @@ body {
   background: var(--brand-white);
   border-radius: 20px;
   padding: 40px;
-  border: 1px solid rgba(0,0,0,0.06);
-  box-shadow: 0 4px 20px rgba(0,0,0,0.03);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+
   /* Absolute position to overlap them perfectly */
   position: absolute;
   top: 50%;
@@ -240,18 +255,19 @@ body {
 .input-group input {
   width: 100%;
   border: none;
-  border-bottom: 2px solid #E5E7EB;
+  border-bottom: 2px solid #e5e7eb;
   padding: 12px 0;
   font-size: 14px;
   color: var(--text-main);
   background: transparent;
   outline: none;
   transition: 0.3s;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
 }
 .input-group label {
   position: absolute;
-  top: 12px; left: 0;
+  top: 12px;
+  left: 0;
   color: var(--text-muted);
   font-size: 14px;
   pointer-events: none;
@@ -285,14 +301,18 @@ body {
   position: relative;
   padding-left: 24px;
 }
-.checkbox-wrap input { 
-  position: absolute; opacity: 0; 
-  width: 0; height: 0;
+.checkbox-wrap input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
 }
 .check-box {
   position: absolute;
-  left: 0; top: 1px;
-  width: 16px; height: 16px;
+  left: 0;
+  top: 1px;
+  width: 16px;
+  height: 16px;
   border: 2px solid var(--brand-green);
   border-radius: 4px;
 }
@@ -302,8 +322,10 @@ body {
 .checkbox-wrap input:checked ~ .check-box::after {
   content: "";
   position: absolute;
-  left: 4px; top: 1px;
-  width: 4px; height: 8px;
+  left: 4px;
+  top: 1px;
+  width: 4px;
+  height: 8px;
   border: solid white;
   border-width: 0 2px 2px 0;
   transform: rotate(45deg);
@@ -315,7 +337,9 @@ body {
   text-decoration: none;
   transition: 0.2s;
 }
-.forgot:hover { color: var(--brand-green); }
+.forgot:hover {
+  color: var(--brand-green);
+}
 
 .btn-primary {
   width: 100%;
@@ -327,14 +351,14 @@ body {
   font-size: 14px;
   font-weight: 700;
   cursor: pointer;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   transition: 0.3s;
 }
 .btn-primary:hover {
   background: var(--brand-green);
   color: var(--brand-black);
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(169,197,47,0.3);
+  box-shadow: 0 8px 20px rgba(169, 197, 47, 0.3);
 }
 
 .button-group {
@@ -346,19 +370,19 @@ body {
 .btn-guest {
   width: 100%;
   padding: 14px;
-  border: 1px solid #E5E7EB;
+  border: 1px solid #e5e7eb;
   border-radius: 12px;
   background: transparent;
   color: var(--text-main);
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   transition: 0.2s;
 }
 .btn-guest:hover {
-  background: #F9FAFB;
-  border-color: #D1D5DB;
+  background: #f9fafb;
+  border-color: #d1d5db;
 }
 
 .divider {
@@ -369,9 +393,9 @@ body {
 }
 .divider::before,
 .divider::after {
-  content: '';
+  content: "";
   flex: 1;
-  border-bottom: 1px solid #E5E7EB;
+  border-bottom: 1px solid #e5e7eb;
 }
 .divider span {
   padding: 0 10px;
@@ -389,7 +413,7 @@ body {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  border: 1px solid #E5E7EB;
+  border: 1px solid #e5e7eb;
   background: var(--brand-white);
   display: flex;
   align-items: center;
@@ -399,8 +423,8 @@ body {
 }
 .social-brand:hover {
   transform: translateY(-4px) scale(1.1);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-  background: #FFFFFF;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  background: #ffffff;
   z-index: 1;
   border-color: transparent;
 }
@@ -424,7 +448,7 @@ body {
   font-size: 13px;
   font-weight: 700;
   cursor: pointer;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   transition: 0.2s;
 }
 .btn-swap:hover {
@@ -460,6 +484,6 @@ body {
     display: none;
   }
   .left-footer {
-     display: none;
+    display: none;
   }
 }

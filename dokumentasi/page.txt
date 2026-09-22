@@ -1,0 +1,155 @@
+Berikut adalah rancangan distribusi fitur dan konten untuk setiap halaman pada aplikasi Platform Career & Education Tracker kamu:
+
+SIMPEL
+Berikut adalah versi simpelnya:
+
+#home
+
+Hero section & Tombol Login/Register
+
+Filter / Search utama
+
+Trending Roadmap
+
+Highlight Path beserta Tags & Rating Path
+
+Teaser Upcoming Update (Universitas & Corporate)
+
+#dashboard
+
+Progress bar Active Roadmap
+
+Deadline Tracker & Countdown
+
+Widget Skills Gap Analyzer (Ringkasan)
+
+Quick Access ke Resource Pocket
+
+#roadmap (List & Detail)
+
+Filter / Search lanjutan
+
+Daftar penyaluran career & beasiswa
+
+Interactive Roadmap / Stepper (Sistem checkpoint)
+
+Skills Gap Analyzer (Perbandingan skill & saran belajar)
+
+Detail Rating Path (Skor sertifikat & benefit value)
+
+Alumni Insight (Sharing dengan alumni)
+
+Resource Pocket (Penyimpanan link setiap path)
+
+Tombol Simpan Path
+
+#profil
+
+Informasi dasar & Bio
+
+Daftar Skills / Keahlian
+
+Daftar Path yang disimpan & diselesaikan
+
+Showcase Unjuk Skill & Portofolio (Persiapan platform sosmed/rekrutmen)
+
+#setting
+
+Pengaturan Akun & Sandi
+
+Fitur "Ingat Saya"
+
+Pengaturan Notifikasi Pengingat (Email & Kalender)
+
+Pengaturan Privasi Profil
+
+#contact
+
+Formulir Bantuan / Lapor Bug
+
+Formulir usulan/saran path baru
+
+Kontak kerjasama pihak ke-3 (Kampus/Corporate)
+
+FULL DOKUMENTASI
+
+1. #Home (Landing Page / Halaman Utama)
+Fokus halaman ini adalah menarik pengguna baru (serta guest) dan menunjukkan nilai jual utama platform.
+
+Hero Section: Headline yang kuat tentang platform penyalur karier/pendidikan dan pencari beasiswa. Tombol CTA (Call to Action) untuk Login / Register.
+
+Search & Filter Bar Utama: Fitur pencarian cepat untuk mencari beasiswa, program, atau path karier.
+
+Trending Roadmap: Menampilkan carousel atau grid berisi roadmap paling populer saat ini.
+
+Highlight Path & Rating: Menampilkan cuplikan program dengan label Tags (contoh: "program pemerintah", "gratis") dan Rating Path (contoh: Sertifikat 5/5, Fully Funded).
+
+Teaser Upcoming Updates: Banner kecil "Coming Soon: Jalur Universitas & Corporate (Lowongan Kerja)".
+
+2. #Dashboard (Pusat Kendali Pengguna)
+Halaman ini adalah layar pertama setelah pengguna login. Fokus pada produktivitas dan pemantauan progres personal.
+
+Active Roadmap Overview: Menampilkan progress bar dari program yang sedang diikuti (misal: "Apple Developer Academy - 50% Selesai").
+
+Deadline Tracker & Countdown: Widget kalender atau daftar tenggat waktu terdekat dari path yang diikuti (kapan penutupan pendaftaran, jadwal tes).
+
+Skills Gap Analyzer (Widget): Ringkasan singkat tentang status keahlian pengguna saat ini dibandingkan dengan target path utama mereka, lengkap dengan skor persentase kecocokan.
+
+Resource Pocket (Quick Access): Jalan pintas ke link atau materi penting yang baru saja disimpan oleh pengguna.
+
+3. #Roadmap (Eksplorasi & Detail Jalur)
+Halaman ini dibagi menjadi dua bagian: Daftar Roadmap (List) dan Detail Roadmap (Single Page).
+
+Bagian A: Roadmap List
+
+Advanced Filter & Search: Filter berdasarkan kategori (beasiswa, bootcamp), Tags (santai, kompetitif), dan Rating Path (kredibilitas/benefit).
+
+Katalog Roadmap: Menampilkan kartu-kartu roadmap. Tombol "Simpan Path" untuk menambahkannya ke profil.
+
+Bagian B: Roadmap Detail (Saat diklik)
+
+Interactive Roadmap / Stepper: Sistem checkpoint linier (Contoh nyata: Riset Persyaratan ➔ Panduan CV/Portofolio ➔ Latihan Soal ➔ Latihan Interview). Pengguna bisa mencentang tahap yang sudah dilewati.
+
+Detail Penilaian & Benefit: Menampilkan rincian skor Rating Path (Sertifikat 5/5) dan benefit (fully funded, lanjut kerja).
+
+Skills Gap Analyzer (Spesifik): Membandingkan keahlian yang dibutuhkan program ini dengan skill pengguna, lengkap dengan saran dan resource pembelajaran.
+
+Alumni Insight: Kolom diskusi atau testimoni khusus dari alumni yang pernah mengikuti program tersebut.
+
+Resource Pocket (Lokal): Tempat khusus menyimpan link referensi yang berkaitan dengan program ini saja.
+
+4. #Profil (Identitas & Etalase Skill)
+Halaman ini adalah fondasi untuk Ide Lanjutan Besar (menjadi media sosial pencarian kerja ala LinkedIn).
+
+Informasi Dasar: Foto, nama, bio, dan status akademik/pekerjaan saat ini.
+
+Skills Inventory: Daftar keahlian yang dimiliki pengguna saat ini (yang menjadi acuan data untuk Skills Gap Analyzer).
+
+Saved & Completed Paths: Tab yang berisi riwayat program yang berhasil diselesaikan, sertifikat yang didapat, serta path yang di-bookmark.
+
+Showcase / Unjuk Skill (Persiapan Fitur Lanjutan): Portofolio, hasil karya, atau proyek yang bisa disetting ke mode publik (Public URL) agar bisa dilihat oleh recruiter di masa depan.
+
+5. #Setting (Pengaturan Akun & Preferensi)
+Halaman fungsional untuk mengontrol perilaku aplikasi.
+
+Akun & Keamanan: Pengaturan kata sandi, update email, dan opsi "Ingat Saya" (Remember Me).
+
+Pengaturan Notifikasi (Deadline Tracker): Menghidupkan/mematikan peringatan tenggat waktu via Email atau menautkannya ke Google Calendar.
+
+Privasi Profil: Pengaturan visibilitas akun (Publik/Privat) sebagai fondasi untuk fitur rekrutmen sosial media ke depannya.
+
+6. #Contact (Dukungan & Kerjasama)
+Formulir Bantuan (Support): Untuk pengguna yang mengalami masalah bug sistem atau kendala akun.
+
+Saran Path Baru: Form bagi pengguna yang ingin merekomendasikan program beasiswa atau bootcamp baru agar dimasukkan ke dalam database.
+
+Partnership Inquiry: Halaman khusus bagi perwakilan kampus (Universitas) atau perusahaan (Corporate) yang ingin bekerja sama memasukkan program atau lowongan mereka (sesuai upcoming update).
+
+7. #Login/Register
+register/login sosmed : google,facebook,linkedin,instagram,x(meta),Akun linear
+login guest : BISA
+
+SIMPEL
+
+#home
+-

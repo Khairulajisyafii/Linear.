@@ -1,6 +1,59 @@
-SAAT PERTAMA KALI
--login/register
--dashboard
+[Pengunjung]
+  │
+  ├──> #HOME (Landing Page)
+  │      ├─ Penjelasan Web, Fungsi, Tujuan, & Benefit
+  │      ├─ List Program Terbaik
+  │      ├─ Kata Alumni
+  │      ├─ Filter / Search Utama
+  │      ├─ Contact Us
+  │      └─ Hero Section ──> (Tombol Login/Register)
+  │
+  └──> #LOGIN / REGISTER
+         ├─ Metode Auth: Akun Linear, Facebook, Google, LinkedIn, X (Meta), Instagram
+         ├─ Masuk sebagai Guest (Kembali ke Home/Eksplorasi Terbatas)
+         └─ (Autentikasi Berhasil) ──> Akses #DASHBOARD
 
-NAVBAR LINKS
-- SEARCH YOUR PATH (univ,beasiswa,sekolah,corporate)
+═══════════════════════════════════════════════════════════════════════════════
+ 
+[User Terdaftar] ──> #DASHBOARD (Pusat Kendali Utama)
+                       │
+                       ├─ Konten Halaman:
+                       │   ├─ My Roadmap (Manajemen prioritas, favorit, hapus)
+                       │   ├─ Deadline roadmap terdekat
+                       │   ├─ Progress bar Active Roadmap
+                       │   ├─ Input skill yang dimiliki
+                       │   ├─ Widget Skills Gap Analyzer (Ringkasan & Saran)
+                       │   └─ Quick Access ke Resource Pocket
+                       │
+                       └─ Navigasi Utama (Menu Bar):
+                           │
+                           ├──> #ROADMAP LIST (Eksplorasi)
+                           │      ├─ Filter / Search lanjutan
+                           │      ├─ Daftar penyaluran career & beasiswa
+                           │      ├─ Tombol Simpan Path (Tersimpan ke Dashboard)
+                           │      └─ Pilih Program ──> #ROADMAP ISI (Detail)
+                           │                             ├─ Informasi Roadmap & Benefit
+                           │                             ├─ Link pendaftaran & Tombol Start Path
+                           │                             ├─ Path line (Interactive Roadmap / Stepper)
+                           │                             ├─ Skills Gap Analyzer (Perbandingan skill & saran)
+                           │                             ├─ Detail Rating Path (Skor & Value)
+                           │                             ├─ Alumni Insight
+                           │                             └─ Resource Pocket (Link/materi path tersebut)
+                           │
+                           ├──> #PROFIL (Identitas & Portofolio)
+                           │      ├─ Informasi dasar & Bio
+                           │      ├─ Daftar Skills / Keahlian (Input)
+                           │      ├─ Daftar Path yang disimpan & diselesaikan
+                           │      └─ Showcase Unjuk Skill & Portofolio 
+                           │
+                           ├──> #SETTING (Preferensi Sistem)
+                           │      ├─ Pengaturan Akun & Sandi
+                           │      ├─ Fitur "Ingat Saya"
+                           │      ├─ Pengaturan Notifikasi (Email & Kalender)
+                           │      ├─ Pengaturan Privasi Profil
+                           │      └─ Hapus Akun
+                           │
+                           └──> #CONTACT (Dukungan & Kemitraan)
+                                  ├─ Formulir Bantuan / Lapor Bug
+                                  ├─ Formulir usulan/saran path baru
+                                  └─ Kontak kerjasama pihak ke-3 (Kampus/Corporate)
