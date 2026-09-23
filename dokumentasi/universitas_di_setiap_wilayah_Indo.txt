@@ -1,0 +1,11 @@
+#====SUMATRA====#
+1.Aceh
+2.Sumatra Utara
+3.Sumatra Barat
+4.Riau
+5.Kepulauan Riau
+6.Jambi
+7.Sumatra Selatan
+8.Kepulauan Bangka Belitung
+9.Bengkulu
+10.Lampung

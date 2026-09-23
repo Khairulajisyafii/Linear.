@@ -3,205 +3,365 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dashboard - Career & Education Tracker</title>
-    <link rel="stylesheet" href="style.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <nav class="navbar">
-      <div class="logo">Path<span>Tracker</span></div>
-      <ul class="nav-links">
-        <li><a href="#" class="active">Dashboard</a></li>
-        <li><a href="#">Search Your Path</a></li>
-        <li><a href="#">Resource Pocket</a></li>
-        <li><a href="#">Alumni Insight</a></li>
-      </ul>
-      <div class="user-profile">
-        <span class="avatar">U</span>
-        <span>Hi, User</span>
-      </div>
-    </nav>
 
-    <div class="dashboard-container">
-      <!-- Sidebar -->
-      <aside class="sidebar">
-        <ul>
-          <li class="active">Overview</li>
-          <li>My Roadmaps</li>
-          <li>Skills Gap Analyzer</li>
-          <li>Saved Paths</li>
-          <li>Settings</li>
-        </ul>
+    <title>Pathly — Student Guide</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+  </head>
+
+  <body>
+    <div class="app">
+      <!-- ================= SIDEBAR ================= -->
+
+      <aside class="sidebar" id="sidebar">
+        <div class="brand">
+          <div class="brand-logo">P</div>
+          <span>Pathly</span>
+        </div>
+
+        <div class="nav-title">MAIN</div>
+
+        <nav>
+          <button class="nav-item active" data-page="dashboard">
+            <i data-lucide="layout-dashboard"></i>
+            <span>Dashboard</span>
+          </button>
+
+          <button class="nav-item" data-page="roadmap">
+            <i data-lucide="route"></i>
+            <span>Roadmap</span>
+          </button>
+
+          <button class="nav-item" data-page="scholarship">
+            <i data-lucide="graduation-cap"></i>
+            <span>Beasiswa</span>
+          </button>
+
+          <button class="nav-item" data-page="resources">
+            <i data-lucide="library"></i>
+            <span>Resources</span>
+          </button>
+
+          <button class="nav-item" data-page="progress">
+            <i data-lucide="chart-no-axes-combined"></i>
+            <span>Progress</span>
+          </button>
+        </nav>
+
+        <div class="nav-title second">GENERAL</div>
+
+        <nav>
+          <button class="nav-item" data-page="settings">
+            <i data-lucide="settings"></i>
+            <span>Settings</span>
+          </button>
+
+          <button href="#" class="nav-link" id="helpCenterLink">
+            <i data-lucide="life-buoy"></i>
+            <span>Help Center</span>
+          </button>
+        </nav>
+
+        <div class="sidebar-bottom">
+          <div class="sidebar-card">
+            <span>Keep growing</span>
+
+            <strong> Build your university journey. </strong>
+
+            <button>Explore</button>
+          </div>
+
+          <div class="sidebar-user">
+            <div class="avatar">IZ</div>
+
+            <div>
+              <strong>Kumar</strong>
+              <span>Student</span>
+            </div>
+          </div>
+        </div>
       </aside>
 
-      <!-- Main Content -->
-      <main class="main-content">
-        <header class="dashboard-header">
-          <h1>Selamat Datang, User!</h1>
-          <p>Mulai eksplorasi perjalanan karir dan pendidikan Anda hari ini.</p>
+      <!-- ================= MAIN ================= -->
+
+      <main class="main">
+        <!-- TOPBAR -->
+
+        <header class="topbar">
+          <button class="mobile-menu" id="mobileMenu">
+            <i data-lucide="menu"></i>
+          </button>
+
+          <div class="breadcrumb">
+            <span>Workspace</span>
+
+            <i data-lucide="chevron-right"></i>
+
+            <strong id="breadcrumb"> Dashboard </strong>
+          </div>
+
+          <div class="top-actions">
+            <div class="global-search">
+              <i data-lucide="search"></i>
+
+              <input id="globalSearch" type="text" placeholder="Search..." />
+            </div>
+
+            <button class="theme-toggle" id="themeToggle" type="button">
+              <span class="theme-icon">
+                <i data-lucide="moon"></i>
+              </span>
+
+              <span class="theme-label">Dark</span>
+            </button>
+
+            <div class="top-profile">
+              <div class="avatar">KR</div>
+
+              <div>
+                <strong>Kumar</strong>
+                <span>Student</span>
+              </div>
+            </div>
+          </div>
         </header>
 
-        <!-- Empty Roadmap Feature -->
-        <section class="active-roadmap">
-          <h2>Roadmap Aktif</h2>
-          <div class="empty-state">
-            <div class="empty-icon">🧭</div>
-            <h3>Belum ada roadmap yang diikuti</h3>
+        <!-- ================= PAGE ================= -->
+
+        <div id="pageContent"></div>
+      <section class="help-center-page" id="helpCenterPage">
+        <!-- HERO -->
+        <div class="help-hero">
+          <div class="help-hero-content">
+            <span class="help-badge">
+              <i data-lucide="life-buoy"></i>
+              Help Center
+            </span>
+
+            <h1>How can we help you?</h1>
+
             <p>
-              Temukan dan pilih roadmap pertama Anda untuk mulai melacak progres
-              belajar dan karir Anda.
+              Find answers, guides, and useful information to help you get the
+              most out of your journey.
             </p>
-            <button
-              class="btn-primary"
-              style="width: auto; margin-top: 1.5rem; padding: 0.75rem 1.5rem"
-            >
-              Cari Roadmap
+
+            <div class="help-search">
+              <i data-lucide="search"></i>
+
+              <input
+                type="text"
+                id="helpSearch"
+                placeholder="Search for help..."
+                autocomplete="off"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- CATEGORIES -->
+        <div class="help-section">
+          <div class="help-section-heading">
+            <div>
+              <span class="help-overline">EXPLORE</span>
+              <h2>How can we help?</h2>
+            </div>
+          </div>
+
+          <div class="help-category-grid">
+            <button class="help-category">
+              <span class="help-category-icon">
+                <i data-lucide="book-open"></i>
+              </span>
+
+              <span>
+                <strong>Getting Started</strong>
+                <small>Learn the basics</small>
+              </span>
+
+              <i class="category-arrow" data-lucide="arrow-up-right"></i>
+            </button>
+
+            <button class="help-category">
+              <span class="help-category-icon">
+                <i data-lucide="rocket"></i>
+              </span>
+
+              <span>
+                <strong>Roadmap</strong>
+                <small>Track your learning journey</small>
+              </span>
+
+              <i class="category-arrow" data-lucide="arrow-up-right"></i>
+            </button>
+
+            <button class="help-category">
+              <span class="help-category-icon">
+                <i data-lucide="user-cog"></i>
+              </span>
+
+              <span>
+                <strong>Account & Settings</strong>
+                <small>Manage your account</small>
+              </span>
+
+              <i class="category-arrow" data-lucide="arrow-up-right"></i>
+            </button>
+
+            <button class="help-category">
+              <span class="help-category-icon">
+                <i data-lucide="shield-check"></i>
+              </span>
+
+              <span>
+                <strong>Privacy & Security</strong>
+                <small>Keep your account secure</small>
+              </span>
+
+              <i class="category-arrow" data-lucide="arrow-up-right"></i>
+            </button>
+
+            <button class="help-category">
+              <span class="help-category-icon">
+                <i data-lucide="bar-chart-3"></i>
+              </span>
+
+              <span>
+                <strong>Progress</strong>
+                <small>Understand your progress</small>
+              </span>
+
+              <i class="category-arrow" data-lucide="arrow-up-right"></i>
+            </button>
+
+            <button class="help-category">
+              <span class="help-category-icon">
+                <i data-lucide="message-circle"></i>
+              </span>
+
+              <span>
+                <strong>Contact Support</strong>
+                <small>Need additional help?</small>
+              </span>
+
+              <i class="category-arrow" data-lucide="arrow-up-right"></i>
             </button>
           </div>
-        </section>
-
-        <div class="grid-container">
-          <!-- Kolom Kiri -->
-          <div class="grid-column">
-            <!-- Empty Deadline Tracker Feature -->
-            <section class="deadline-tracker">
-              <h2>Deadline Mendatang</h2>
-              <div class="empty-state small-empty">
-                <div class="empty-icon">📅</div>
-                <p>Tidak ada jadwal terdekat. Anda sedang bersantai!</p>
-              </div>
-            </section>
-
-            <!-- Personalized Roadmap Feature -->
-            <section class="personalized-roadmap">
-              <h2>Rekomendasi Untukmu 🎯</h2>
-              <p class="section-desc">
-                Berdasarkan minat Anda di bidang <strong>Teknologi</strong>
-              </p>
-
-              <div class="path-card">
-                <div class="match-badge">95% Match</div>
-                <h3>Apple Developer Academy</h3>
-                <div class="rating">⭐ 5/5 (Pemberian Fasilitas)</div>
-                <div class="tags">
-                  <span class="tag">Kompetitif</span>
-                  <span class="tag">Serius</span>
-                </div>
-                <button
-                  class="btn-outline preview-btn"
-                  data-title="Apple Developer Academy"
-                >
-                  Preview Roadmap
-                </button>
-              </div>
-            </section>
-          </div>
-
-          <!-- Kolom Kanan -->
-          <div class="grid-column">
-            <!-- Trending Roadmap Feature -->
-            <section class="hot-paths">
-              <h2>Trending Roadmap 🔥</h2>
-              <div class="path-card">
-                <h3>Beasiswa LPDP 2024</h3>
-                <div class="rating">⭐ 5/5 (Fully Funded)</div>
-                <div class="tags">
-                  <span class="tag">Program Pemerintah</span>
-                  <span class="tag">Gratis</span>
-                  <span class="tag">Kompetitif</span>
-                </div>
-                <button
-                  class="btn-outline preview-btn"
-                  data-title="Beasiswa LPDP 2024"
-                >
-                  Preview Roadmap
-                </button>
-              </div>
-
-              <div class="path-card">
-                <h3>Google Bangkit 2024</h3>
-                <div class="rating">⭐ 4.5/5 (Lanjut Kerja)</div>
-                <div class="tags">
-                  <span class="tag">Program Pemerintah</span>
-                  <span class="tag">Gratis</span>
-                  <span class="tag">Serius</span>
-                </div>
-                <button
-                  class="btn-outline preview-btn"
-                  data-title="Google Bangkit 2024"
-                >
-                  Preview Roadmap
-                </button>
-              </div>
-            </section>
-          </div>
-        </div>
-      </main>
-    </div>
-
-    <!-- Modal Preview Roadmap -->
-    <div class="modal-overlay" id="previewModal">
-      <div class="modal-content">
-        <button class="close-btn" id="closeModal">&times;</button>
-        <div class="modal-header">
-          <h2 id="modalTitle">Roadmap Title</h2>
-          <p class="modal-desc">
-            Pratinjau tahapan yang akan Anda lalui dalam roadmap ini.
-          </p>
         </div>
 
-        <div class="timeline">
-          <div class="timeline-step">
-            <div class="dot"></div>
-            <div class="step-info">
-              <h4>Tahap 1: Riset & Persyaratan</h4>
-              <p>
-                Memahami kualifikasi, dokumen yang dibutuhkan, dan jadwal
-                pendaftaran secara menyeluruh.
-              </p>
+        <!-- FAQ -->
+        <div class="help-section faq-section">
+          <div class="help-section-heading">
+            <div>
+              <span class="help-overline">FAQ</span>
+              <h2>Frequently Asked Questions</h2>
+              <p>Quick answers to common questions.</p>
             </div>
           </div>
-          <div class="timeline-step">
-            <div class="dot"></div>
-            <div class="step-info">
-              <h4>Tahap 2: Persiapan Berkas</h4>
-              <p>
-                Panduan menyusun CV ATS-friendly, esai/motivation letter, dan
-                portofolio.
-              </p>
+
+          <div class="faq-list">
+            <div class="faq-item">
+              <button class="faq-question">
+                <span>How do I start my roadmap?</span>
+                <i data-lucide="plus"></i>
+              </button>
+
+              <div class="faq-answer">
+                <p>
+                  Open the Roadmap section from the sidebar and choose the
+                  learning path you want to start. Your progress will be tracked
+                  automatically.
+                </p>
+              </div>
             </div>
-          </div>
-          <div class="timeline-step">
-            <div class="dot"></div>
-            <div class="step-info">
-              <h4>Tahap 3: Seleksi Tes Tertulis/Online</h4>
-              <p>
-                Simulasi soal logika, tes kepribadian, atau tes dasar sesuai
-                program.
-              </p>
+
+            <div class="faq-item">
+              <button class="faq-question">
+                <span>How can I track my progress?</span>
+                <i data-lucide="plus"></i>
+              </button>
+
+              <div class="faq-answer">
+                <p>
+                  Your completed steps and milestones are displayed directly
+                  inside your roadmap and dashboard.
+                </p>
+              </div>
             </div>
-          </div>
-          <div class="timeline-step">
-            <div class="dot"></div>
-            <div class="step-info">
-              <h4>Tahap 4: Interview & Evaluasi</h4>
-              <p>
-                Tips wawancara dan persiapan menghadapi tim seleksi/panelis.
-              </p>
+
+            <div class="faq-item">
+              <button class="faq-question">
+                <span>Can I switch between Dark and Light Mode?</span>
+                <i data-lucide="plus"></i>
+              </button>
+
+              <div class="faq-answer">
+                <p>
+                  Yes. Use the theme button in the topbar to switch between
+                  Light Mode and Dark Mode.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question">
+                <span>How do I change my account settings?</span>
+                <i data-lucide="plus"></i>
+              </button>
+
+              <div class="faq-answer">
+                <p>
+                  Open your profile menu and select Settings to manage your
+                  account preferences.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question">
+                <span>Where can I contact support?</span>
+                <i data-lucide="plus"></i>
+              </button>
+
+              <div class="faq-answer">
+                <p>
+                  If you cannot find the answer you're looking for, use the
+                  Contact Support section below.
+                </p>
+              </div>
             </div>
           </div>
         </div>
 
-        <div class="modal-actions">
-          <button class="btn-primary" id="startRoadmapBtn">
-            Mulai Roadmap Ini
+        <!-- CONTACT -->
+        <div class="help-contact">
+          <div class="help-contact-icon">
+            <i data-lucide="headphones"></i>
+          </div>
+
+          <div class="help-contact-text">
+            <span>Still need help?</span>
+
+            <h2>We're here for you.</h2>
+
+            <p>
+              Can't find what you're looking for? Contact our support team and
+              we'll help you out.
+            </p>
+          </div>
+
+          <button class="help-contact-button">
+            Contact Support
+            <i data-lucide="arrow-right"></i>
           </button>
         </div>
-      </div>
+      </section>
+      </main>
+
     </div>
+
+    <!-- ================= JAVASCRIPT ================= -->
 
     <script src="script.js"></script>
   </body>
