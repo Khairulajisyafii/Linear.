@@ -29,6 +29,16 @@
             <span>Dashboard</span>
           </button>
 
+          <button class="nav-item" data-page="home">
+            <i data-lucide="house"></i>
+            <span>Home</span>
+          </button>
+
+          <button class="nav-item" data-page="roadmap-search">
+            <i data-lucide="search"></i>
+            <span>Search Roadmap</span>
+          </button>
+
           <button class="nav-item" data-page="roadmap">
             <i data-lucide="route"></i>
             <span>Roadmap</span>
@@ -73,14 +83,16 @@
             <button>Explore</button>
           </div>
 
-          <div class="sidebar-user">
+          <button class="sidebar-user" id="sidebarProfileButton" type="button">
             <div class="avatar">IZ</div>
 
             <div>
-              <strong>Kumar</strong>
+              <strong>Ismet</strong>
               <span>Student</span>
             </div>
-          </div>
+
+            <i data-lucide="chevron-right"></i>
+          </button>
         </div>
       </aside>
 
@@ -117,14 +129,16 @@
               <span class="theme-label">Dark</span>
             </button>
 
-            <div class="top-profile">
-              <div class="avatar">KR</div>
+            <button class="top-profile" id="profileButton" type="button" aria-label="Open profile">
+              <div class="avatar">IZ</div>
 
               <div>
-                <strong>Kumar</strong>
+                <strong>Ismet</strong>
                 <span>Student</span>
               </div>
-            </div>
+
+              <i data-lucide="chevron-down"></i>
+            </button>
           </div>
         </header>
 

@@ -16,6 +16,76 @@ const themeToggle = document.getElementById("themeToggle");
    PAGE DATA
 ========================================================= */
 
+const PROFILE_KEY = "pathly-profile";
+
+function getSavedProfile() {
+  const defaults = {
+    name: "Ismet Zulkarnain",
+    role: "Student",
+    email: "ismet@example.com",
+    university: "Not set yet"
+  };
+  try {
+    return { ...defaults, ...(JSON.parse(localStorage.getItem(PROFILE_KEY)) || {}) };
+  } catch {
+    return defaults;
+  }
+}
+
+function saveProfile(profile) {
+  localStorage.setItem(PROFILE_KEY, JSON.stringify(profile));
+}
+
+function escapeHTML(value) {
+  return String(value ?? "").replace(/[&<>\"]/g, char => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[char]));
+}
+
+function escapeAttr(value) {
+  return escapeHTML(value).replace(/'/g, "&#39;");
+}
+
+function getInitials(name) {
+  const parts = String(name || "Student").trim().split(/\s+/).filter(Boolean);
+  return (parts.slice(0, 2).map(part => part[0]).join("") || "ST").toUpperCase();
+}
+
+function updateProfileChrome(profile) {
+  const initials = getInitials(profile.name);
+  document.querySelectorAll(".top-profile .avatar, .sidebar-user .avatar").forEach(el => el.textContent = initials);
+  const topName = document.querySelector(".top-profile strong");
+  const sideName = document.querySelector(".sidebar-user strong");
+  const topRole = document.querySelector(".top-profile span");
+  const sideRole = document.querySelector(".sidebar-user span");
+  if (topName) topName.textContent = profile.name.split(" ")[0] || profile.name;
+  if (sideName) sideName.textContent = profile.name.split(" ")[0] || profile.name;
+  if (topRole) topRole.textContent = profile.role;
+  if (sideRole) sideRole.textContent = profile.role;
+}
+
+updateProfileChrome(getSavedProfile());
+
+function profilePageHTML() {
+  const profile = getSavedProfile();
+  return `
+    <section class="profile-page">
+      <div class="profile-hero">
+        <div class="profile-avatar-large" id="profileAvatarLarge">${getInitials(profile.name)}</div>
+        <div class="profile-identity"><span class="profile-label">PATHLY STUDENT</span><h2 id="profileDisplayName">${escapeHTML(profile.name)}</h2><p><i data-lucide="map-pin"></i> Indonesia · <span id="profileDisplayRole">${escapeHTML(profile.role)}</span></p></div>
+        <button class="primary profile-edit" id="profileEditButton" type="button"><i data-lucide="pencil"></i> Edit Profile</button>
+      </div>
+      <div class="profile-grid">
+        <div class="card profile-info-card"><div class="card-header"><div><h2>Personal Information</h2><p>Edit your information, then press Save Profile.</p></div></div><div class="profile-form-grid">
+          <label>Full Name<input id="profileName" value="${escapeAttr(profile.name)}" disabled></label>
+          <label>Role<input id="profileRole" value="${escapeAttr(profile.role)}" disabled></label>
+          <label>Email<input id="profileEmail" type="email" value="${escapeAttr(profile.email)}" disabled></label>
+          <label>Target University<input id="profileUniversity" value="${escapeAttr(profile.university)}" disabled></label>
+        </div></div>
+        <div class="card profile-goal-card"><div class="card-header"><div><h2>My Journey</h2><p>Your current Pathly overview.</p></div></div><div class="profile-stat"><span>Overall Progress</span><strong>68%</strong><div class="profile-progress"><i></i></div></div><div class="profile-mini-grid"><div><strong>4</strong><span>Steps done</span></div><div><strong>12</strong><span>Scholarships</span></div><div><strong>05</strong><span>Tasks</span></div></div></div>
+      </div>
+    </section>
+  `;
+}
+
 const pages = {
   dashboard: {
     title: "Welcome back, Ismet 👋",
@@ -70,6 +140,71 @@ const pages = {
   },
 
   /* =======================================================
+     HOME
+  ======================================================= */
+
+  home: {
+    title: "Home",
+    subtitle: "Your Pathly starting point for your university journey.",
+    html: `
+      <section class="home-welcome">
+        <div class="home-welcome-copy">
+          <span class="home-badge"><i data-lucide="sparkles"></i> PATHLY HOME</span>
+          <h2>Plan your future.<br><span>Build your path.</span></h2>
+          <p>Everything you need to prepare for university, discover roadmaps, find scholarships, and track your progress in one place.</p>
+          <div class="home-actions">
+            <button class="primary" data-home-action="roadmap-search"><i data-lucide="search"></i> Find a Roadmap</button>
+            <button class="secondary" data-home-action="profile"><i data-lucide="user"></i> My Profile</button>
+          </div>
+        </div>
+        <div class="home-visual">
+          <div class="home-orbit orbit-one"></div>
+          <div class="home-orbit orbit-two"></div>
+          <div class="home-visual-card"><i data-lucide="route"></i><strong>Your journey</strong><span>starts here</span></div>
+        </div>
+      </section>
+
+      <section class="home-grid">
+        <button class="home-card" data-home-action="roadmap-search"><span class="home-card-icon"><i data-lucide="map"></i></span><strong>Explore Roadmaps</strong><small>Find a path that matches your university goal.</small><b>→</b></button>
+        <button class="home-card" data-home-action="scholarship"><span class="home-card-icon"><i data-lucide="graduation-cap"></i></span><strong>Find Scholarships</strong><small>Discover opportunities for your education journey.</small><b>→</b></button>
+        <button class="home-card" data-home-action="progress"><span class="home-card-icon"><i data-lucide="chart-no-axes-combined"></i></span><strong>Check Progress</strong><small>See how far you've moved toward your goals.</small><b>→</b></button>
+      </section>
+    `,
+  },
+
+  /* =======================================================
+     ROADMAP SEARCH
+  ======================================================= */
+
+  "roadmap-search": {
+    title: "Search Roadmap",
+    subtitle: "Search and discover a roadmap that fits your university target.",
+    html: `
+      <div class="roadmap-search-page">
+        <div class="roadmap-search-hero">
+          <div>
+            <span class="home-badge"><i data-lucide="search"></i> ROADMAP FINDER</span>
+            <h2>What do you want to become?</h2>
+            <p>Search by major, career, skill, or university preparation path.</p>
+          </div>
+          <div class="roadmap-search-input">
+            <i data-lucide="search"></i>
+            <input id="roadmapSearchInput" placeholder="Search e.g. Software Engineer, UI/UX, Data Science...">
+          </div>
+        </div>
+        <div class="roadmap-search-results" id="roadmapSearchResults">
+          ${roadmapFinderCard("Software Engineering", "Coding, algorithms, web development, Git, and software projects.", "code-2", "12 steps", "Technology")}
+          ${roadmapFinderCard("UI / UX Design", "Design fundamentals, user research, wireframes, prototypes, and portfolio.", "pen-tool", "10 steps", "Design")}
+          ${roadmapFinderCard("Data Science", "Python, statistics, data analysis, visualization, and machine learning basics.", "database", "14 steps", "Data")}
+          ${roadmapFinderCard("Cyber Security", "Networking, Linux, security fundamentals, ethical testing, and defense.", "shield-check", "13 steps", "Security")}
+          ${roadmapFinderCard("Digital Business", "Business strategy, product thinking, marketing, and digital entrepreneurship.", "briefcase-business", "9 steps", "Business")}
+          ${roadmapFinderCard("General University Prep", "A flexible path covering goals, applications, documents, scholarships, and preparation.", "graduation-cap", "8 steps", "University")}
+        </div>
+      </div>
+    `,
+  },
+
+  /* =======================================================
      ROADMAP
   ======================================================= */
 
@@ -101,6 +236,16 @@ const pages = {
       </div>
 
     `,
+  },
+
+  /* =======================================================
+     PROFILE
+  ======================================================= */
+
+  profile: {
+    title: "My Profile",
+    subtitle: "Manage your Pathly profile and university journey information.",
+    html: profilePageHTML(),
   },
 
   /* =======================================================
@@ -634,6 +779,16 @@ function setting(title, description, checked) {
    LOAD PAGE
 ========================================================= */
 
+function roadmapFinderCard(title, description, icon, steps, category) {
+  return `
+    <button class="roadmap-result-card" data-roadmap-name="${title.toLowerCase()}">
+      <span class="roadmap-result-icon"><i data-lucide="${icon}"></i></span>
+      <span class="roadmap-result-body"><strong>${title}</strong><small>${description}</small><em><b>${category}</b> · ${steps}</em></span>
+      <i class="roadmap-result-arrow" data-lucide="arrow-up-right"></i>
+    </button>
+  `;
+}
+
 function loadPage(page) {
   const data = pages[page];
 
@@ -688,6 +843,26 @@ document.querySelectorAll(".nav-item[data-page]").forEach((button) => {
   });
 });
 
+/* PROFILE SHORTCUTS */
+function openProfile() {
+  // Profile does not need its own sidebar item. Open the profile page
+  // directly from the topbar avatar or the sidebar user card.
+  document.querySelectorAll(".nav-item[data-page]").forEach((item) => item.classList.remove("active"));
+
+  loadPage("profile");
+
+  if (breadcrumb) breadcrumb.textContent = "My Profile";
+
+  if (window.innerWidth <= 800) {
+    sidebar.classList.remove("open");
+  }
+
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+document.getElementById("profileButton")?.addEventListener("click", openProfile);
+document.getElementById("sidebarProfileButton")?.addEventListener("click", openProfile);
+
 /* =========================================================
    TASK INTERACTION
 ========================================================= */
@@ -700,7 +875,96 @@ function setupPageInteractions() {
   });
 
   setupScholarshipFilter();
+  setupRoadmapSearch();
+  setupHomeActions();
+  setupProfilePage();
 }
+
+function setupRoadmapSearch() {
+  const input = document.getElementById("roadmapSearchInput");
+  const cards = document.querySelectorAll(".roadmap-result-card");
+  if (!input) return;
+  input.addEventListener("input", () => {
+    const q = input.value.toLowerCase().trim();
+    cards.forEach(card => {
+      card.style.display = !q || card.innerText.toLowerCase().includes(q) ? "flex" : "none";
+    });
+  });
+  cards.forEach(card => card.addEventListener("click", () => {
+    const name = card.querySelector("strong")?.textContent || "Roadmap";
+    alert(`${name}\n\nRoadmap ini siap untuk dikembangkan ke halaman detail langkah-langkahnya.`);
+  }));
+}
+
+function setupHomeActions() {
+  document.querySelectorAll("[data-home-action]").forEach(button => {
+    button.addEventListener("click", () => {
+      const action = button.dataset.homeAction;
+      if (action === "profile") {
+        document.querySelector('.nav-item[data-page="profile"]')?.click();
+      } else {
+        document.querySelector(`.nav-item[data-page="${action}"]`)?.click();
+      }
+    });
+  });
+}
+
+function setupProfilePage() {
+  const edit = document.getElementById("profileEditButton");
+  if (!edit) return;
+
+  const fields = document.querySelectorAll(".profile-form-grid input");
+  const nameField = document.getElementById("profileName");
+  const roleField = document.getElementById("profileRole");
+  const emailField = document.getElementById("profileEmail");
+  const universityField = document.getElementById("profileUniversity");
+  const displayName = document.getElementById("profileDisplayName");
+  const displayRole = document.getElementById("profileDisplayRole");
+  const avatar = document.getElementById("profileAvatarLarge");
+
+  edit.addEventListener("click", () => {
+    const editing = edit.dataset.editing === "true";
+
+    if (editing) {
+      const profile = {
+        name: nameField.value.trim() || "Ismet Zulkarnain",
+        role: roleField.value.trim() || "Student",
+        email: emailField.value.trim() || "",
+        university: universityField.value.trim() || "Not set yet"
+      };
+
+      saveProfile(profile);
+      pages.profile.html = profilePageHTML();
+      updateProfileChrome(profile);
+      displayName.textContent = profile.name;
+      displayRole.textContent = profile.role;
+      avatar.textContent = getInitials(profile.name);
+      fields.forEach(field => field.disabled = true);
+      edit.dataset.editing = "false";
+      edit.innerHTML = '<i data-lucide="pencil"></i> Edit Profile';
+      showProfileSavedMessage();
+    } else {
+      fields.forEach(field => field.disabled = false);
+      nameField.focus();
+      edit.dataset.editing = "true";
+      edit.innerHTML = '<i data-lucide="check"></i> Save Profile';
+    }
+
+    lucide.createIcons();
+  });
+}
+
+function showProfileSavedMessage() {
+  const old = document.querySelector(".profile-save-message");
+  if (old) old.remove();
+  const message = document.createElement("div");
+  message.className = "profile-save-message";
+  message.innerHTML = '<i data-lucide="check-circle-2"></i><span>Profile berhasil disimpan.</span>';
+  document.querySelector(".profile-page")?.prepend(message);
+  lucide.createIcons();
+  setTimeout(() => message.remove(), 2600);
+}
+
 
 /* =========================================================
    SCHOLARSHIP FILTER
