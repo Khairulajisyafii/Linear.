@@ -4,15 +4,15 @@ Instruksi untuk AI: Gunakan dokumen ini sebagai "Buku Panduan Utama" (Single Sou
 
 ---
 1. IDENTITAS VISUAL & TEMA (GLOBAL)
-- Gaya: Premium SaaS, Profesional, Clean, Modern (Terinspirasi Linear.app / Vercel).
+- Gaya: Premium SaaS, Profesional, Clean, Modern 
 - Konfigurasi Warna Tailwind Wajib:
   colors: {
       brand: {
-          green: '#A9C52F',   // Aksen utama (Tombol Aksi, Status Aktif, Glow)
-          light: '#F5F7F8',   // Latar belakang utama (Dashboard, Kertas Kerja)
-          black: '#000000',   // Latar area gelap, Teks utama di area terang
-          darkgray: '#0a0a0a',// Area sidebar/panel di mode gelap
-          border: '#222222'   // Border elemen
+          green: '#A9C52F',  
+          light: '#F5F7F8',  
+          black: '#000000',  
+          darkgray: '#0a0a0a'
+          border: '#222222'   
       }
   }
 - Tipografi: Wajib menggunakan font 'Inter'. Heading harus tebal (bold/extrabold) dengan jarak rapat (`tracking-tight`). Teks deskripsi menggunakan warna abu-abu (`text-gray-500`) dengan `leading-relaxed`.
